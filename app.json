@@ -1,0 +1,55 @@
+{
+  "name": "kiess_the_bride",
+  "env": {
+    "ALLOWED_HOSTS": {
+      "value": ".herokuapp.com"
+    },
+    "DEBUG": {
+      "value": "True"
+    },
+    "DISABLE_COLLECTSTATIC": {
+      "value": 0
+    },
+    "ENVIRONMENT": {
+      "value": "review"
+    },
+    "PROJECT_PATH": {
+      "value": "kiess_the_bride"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "value": "false"
+    },
+    "DJANGO_SUPERUSER_PASSWORD": {
+      "value": "y62@!r_pvgpxf&sccmcp6pvv^_)tlhigc7#e7)!@k^zir$__ci"
+    },
+    "CYPRESS_TEST_USER_PASS": {
+      "value": "y62@!r_pvgpxf&sccmcp6pvv^_)tlhigc7#e7)!@k^zir$__ci"
+    },
+    "SECRET_KEY": {
+      "generator": "secret"
+    }
+  },
+  "addons": [
+    "heroku-postgresql:standard-0",
+    "papertrail:Choklad"
+  ],
+  "environments": {
+    "review": {
+      "addons": [
+        "heroku-postgresql:mini",
+        "papertrail:Choklad"
+      ]
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "./scripts/db_setup.sh"
+  }
+}
