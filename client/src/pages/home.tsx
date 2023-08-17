@@ -10,7 +10,7 @@ export const Home = () => {
 
   return (
     <>
-      <h1>Dashboard</h1>
+      <h1>Welcome</h1>
       <button onClick={logOutUser}>logout</button>
     </>
   )

@@ -11,7 +11,6 @@ import { LoginForm, TLoginForm, LoginFormInputs, userApi } from 'src/services/us
 import { useAuth, useFollowupRoute } from 'src/utils/auth'
 import { localStoreManager } from 'src/utils/local-store-manager'
 
-
 function LogInInner() {
   const params = useLocation()
   const autoError = params.state?.autoError
@@ -20,7 +19,7 @@ function LogInInner() {
   const { createFormFieldChangeHandler, form } = useTnForm<TLoginForm>()
   const navigate = useNavigate()
 
-const [logIn] = useMutation(LOG_IN, {
+  const [logIn] = useMutation(LOG_IN, {
     onCompleted: (data: { tokenAuth: { token: string } }) => {
       localStorage.setItem('auth-token', data.tokenAuth.token)
       updateToken(data.tokenAuth.token)
@@ -33,14 +32,13 @@ const [logIn] = useMutation(LOG_IN, {
       }
     },
   })
-const handleLogin = () => {
-const input = {
+  const handleLogin = () => {
+    const input = {
       variables: {
-        email: form.email.value,
         password: form.password.value,
       },
     }
-logIn(input)
+    logIn(input)
   }
 
   const { token } = useAuth()
@@ -51,30 +49,19 @@ logIn(input)
     // let AppOrAuth address this
 
     return <Navigate to={'/'} state={{ from: followupRoute }} />
-
   }
 
   return (
-    <main className="bg-slate-800 h-screen flex flex-col justify-center items-center gap-3">
-      <header className="text-2xl text-white">Login</header>
-      <section className="flex flex-col justify-center items-center gap-3">
-        <p className="text-slate-200 text-xl">Enter your login credentials below</p>
+    <main className="flex h-screen flex-col items-center justify-center gap-3 bg-slate-800">
+      <header className="text-2xl text-white">Welcome</header>
+      <section className="flex flex-col items-center justify-center gap-3">
+        <p className="text-xl text-slate-200">Enter the password to begin</p>
         <form
           onSubmit={(e) => {
             e.preventDefault()
           }}
           className="flex flex-col gap-3"
         >
-          <div>
-            <Input
-              placeholder="Email"
-              onChange={(e) => createFormFieldChangeHandler(form.email)(e.target.value)}
-              value={form.email.value ?? ''}
-              data-cy="email"
-              id="id"
-            />
-            <ErrorsList errors={form.email.errors} />
-          </div>
           <div>
             <Input
               placeholder="Password"
@@ -93,12 +80,6 @@ logIn(input)
           Login
         </Button>
       </section>
-      <div className="flex flex-col gap-3">
-        <p className="text-xl text-slate-200 font-semibold">Don&apos;t have an account?</p>
-        <Link className="text-xl text-teal-600 font-semibold text-center" to="/sign-up">
-          Register here
-        </Link>
-      </div>
     </main>
   )
 }

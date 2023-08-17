@@ -654,10 +654,24 @@
     luxon "^2.4.0"
     react-native-uuid "^2.0.1"
 
+"@thinknimble/tn-models-fp@^2.13.0":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@thinknimble/tn-models-fp/-/tn-models-fp-2.13.0.tgz#a15bd8b9fcf413486172738afc4c0d96b1458c8d"
+  integrity sha512-QjBjIGCQB8uj0qSKk05RnOIa4m6PrdZ0s3EFyxdXDE+UXkZF7ZBVdimOrDVF2GrULvaLQIH25XeFEHntEMY9pQ==
+  dependencies:
+    "@thinknimble/tn-utils" "^2.0.1"
+
 "@thinknimble/tn-utils@^1.4.0":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@thinknimble/tn-utils/-/tn-utils-1.6.1.tgz#7c87ed15457680ccb5189382d5311c4832dcea6b"
   integrity sha512-hUFjK2gPTL4csHPHAyX5636PEaRb7E/61iwKPaZRACeGSeOSPA7dRltq+zgbf0OLPcSEoq7RyTXJHSpK7CBPXQ==
+
+"@thinknimble/tn-utils@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@thinknimble/tn-utils/-/tn-utils-2.0.1.tgz#582e210b8a4577260d284f880d928a37990f878a"
+  integrity sha512-9P8iKkep7eqgkyoA819vyKFHAq/C8GtV0QGCfu32CYCSFsA+1DOV4+bqtIdlcVa2dhIyEZz7JZ6GCffXk+f7gw==
+  dependencies:
+    type-fest "^3.4.0"
 
 "@tootallnate/once@2":
   version "2.0.0"
@@ -4912,6 +4926,11 @@ type-fest@^0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
+
+type-fest@^3.4.0:
+  version "3.13.1"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-3.13.1.tgz#bb744c1f0678bea7543a2d1ec24e83e68e8c8706"
+  integrity sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==
 
 typed-array-buffer@^1.0.0:
   version "1.0.0"

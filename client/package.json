@@ -4,10 +4,11 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.4.17",
-    "graphql": "^16.0.1",
-    "graphql-tag": "^2.12.6",
     "@thinknimble/tn-forms": "^3.0.0",
     "@thinknimble/tn-forms-react": "^1.0.0",
+    "@thinknimble/tn-models-fp": "^2.13.0",
+    "graphql": "^16.0.1",
+    "graphql-tag": "^2.12.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^3.0.0",
