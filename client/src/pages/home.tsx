@@ -11,8 +11,7 @@ export const Home = () => {
 
   return (
     <>
-      <h1>Dashboard</h1>
-      <button onClick={logOutUser}>logout</button>
+      <h1>Where & When</h1>
     </>
   )
 }
