@@ -1,0 +1,70 @@
+{
+  "name": "kiess_the_bride",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vite --host 0.0.0.0",
+    "build": "vite build --base=/static/",
+    "cypress": "source ../.env && cypress open",
+    "test": "vitest run src",
+    "test:watch": "vitest src",
+    "test:single": "vitest $0",
+    "prettier": "prettier --write ./src",
+    "tslint":"tsc",
+    "lint": "eslint --ext .js,.ts,.jsx,.tsx src"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.33.0",
+    "axios": "^1.5.0",
+    "@thinknimble/tn-models": "^2.0.0",
+    "@thinknimble/tn-forms": "^3.1.8",
+    "@thinknimble/tn-forms-react": "^1.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
+    "react-router-dom": "^6.15.0",
+    "zod": "3.22.2",
+    "zustand": "^4.4.0"
+  },
+  "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^4.34.1",
+    "@testing-library/jest-dom": "^6.1.2",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vitejs/plugin-react": "^4.0.4",
+    "autoprefixer": "^10.4.15",
+    "cypress": "^8.6.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-prettier-config": "^1.0.1",
+    "jsdom": "^22.1.0",
+    "postcss": "^8.4.28",
+    "prettier": "^3.0.2",
+    "prettier-plugin-tailwindcss": "^0.5.3",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.34.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
