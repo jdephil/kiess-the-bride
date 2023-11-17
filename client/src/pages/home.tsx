@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { logout } from 'src/stores/auth'
+import daytime from 'src/assets/images/daytime.jpeg'
 
 export const Home = () => {
   const navigate = useNavigate()
@@ -10,8 +11,12 @@ export const Home = () => {
   }
 
   return (
-    <>
-      <h1>Where & When</h1>
-    </>
+    <div className="bg-wedding-yellow grid h-screen grid-cols-12">
+      <div className="col-start-1 col-end-3"></div>
+      <div className="col-start-3 col-end-11">
+        <img className="" src={daytime} />
+      </div>
+      <div></div>
+    </div>
   )
 }

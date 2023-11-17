@@ -2,7 +2,11 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'wedding-yellow': '#F0ECC0',
+      },
+    },
   },
   plugins: [],
 }
