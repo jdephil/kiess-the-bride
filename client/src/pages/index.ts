@@ -2,3 +2,4 @@
 export { Home } from './home'
 export { Layout } from './layout'
 export { LogIn } from './log-in'
+export { Details } from './details'
