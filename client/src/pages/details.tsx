@@ -13,6 +13,9 @@ export const Details = () => {
       <div className="col-start-8 col-end-12 row-start-1 row-end-3  flex">
         <img className="ml-8 mt-12" src={starsRight} />
       </div>
+      <div className="col-start-6 col-end-7 row-start-1 row-end-3  flex">
+        <img className="" src={moon} />
+      </div>
 
       <div className="col-start-1 col-end-7 row-start-3 row-end-7  flex">
         <img className="mb-5 ml-5" src={forestLeft} />
