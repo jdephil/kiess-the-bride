@@ -25,10 +25,4 @@ export const Home = () => {
       </div>
     </div>
   )
-
-  // return (
-  //   <div className="bg-wedding-yellow flex justify-center">
-  //     <div className="bg-daytime absolute h-full w-3/4 bg-cover bg-no-repeat"></div>
-  //   </div>
-  // )
 }
