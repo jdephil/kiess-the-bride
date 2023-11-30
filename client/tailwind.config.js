@@ -13,6 +13,10 @@ module.exports = {
       },
       spacing: {
         enter: '48%',
+        moon: '43%',
+      },
+      width: {
+        large: '28rem',
       },
     },
   },
