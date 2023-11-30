@@ -26,7 +26,7 @@ export const Details = () => {
           <p>Welcome Party</p>
           <p>Thursday June 6, 2024</p>
           <p>6:00 - 9:30pm</p>
-          <p>Dutch's at Silver Tree</p>
+          <p>Dutch&apos;s at Silver Tree</p>
           <p>patio bar</p>
           <p>567 Glendale Road</p>
           <p>Oakland, MD 21550</p>
