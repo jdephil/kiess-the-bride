@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       colors: {
         'wedding-yellow': '#F0ECC0',
+        'wedding-green': '#31413d',
       },
       backgroundImage: {
         daytime: "url('./src/assets/images/daytime.jpeg')",
