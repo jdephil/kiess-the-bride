@@ -4,12 +4,12 @@ import { Bars3Icon } from '@heroicons/react/20/solid'
 
 export default function MyMenu() {
   return (
-    <div className="fixed top-16 w-48 text-right">
+    <div className="fixed top-12 w-32 text-right">
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button className="inline-flex w-full justify-center rounded-md bg-black/20 px-4 py-2   text-white hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
             <Bars3Icon
-              className="h-10 w-10 text-violet-200 hover:text-violet-100"
+              className="h-8 w-6 text-violet-200 hover:text-violet-100"
               aria-hidden="true"
             />
           </Menu.Button>
