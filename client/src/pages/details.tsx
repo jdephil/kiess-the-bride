@@ -10,7 +10,7 @@ export const Details = () => {
     <div className="flex min-h-screen flex-col justify-center">
       <div className="relative h-screen overflow-scroll bg-wedding-green">
         <Heading />
-        <main className="grid grid-cols-3">
+        <main className="grid grid-cols-3 pt-12">
           <div className="fixed bottom-0">
             <img className="mb-5 ml-5 w-96" src={forestLeft} />
           </div>
