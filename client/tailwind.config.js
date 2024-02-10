@@ -7,6 +7,7 @@ module.exports = {
       colors: {
         'wedding-yellow': '#F0ECC0',
         'wedding-green': '#31413d',
+        'wedding-purple': '#897994',
       },
       backgroundImage: {
         daytime: "url('./src/assets/images/daytime.jpeg')",
