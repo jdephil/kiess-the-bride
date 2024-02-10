@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Heading } from 'src/components/heading'
 import forestLeft from 'src/assets/images/nightime_forest_left.png'
 import forestRight from 'src/assets/images/nighttime_forest_right.png'
@@ -8,43 +9,63 @@ import nightLake from 'src/assets/images/lake-night.png'
 import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import MyMenu from 'src/components/menu'
 import Registry from 'src/components/registry'
 import RSVP from 'src/components/rsvp'
 import Accomodations from 'src/components/accomodations'
 import Transportation from 'src/components/transportation'
 import Schedule from 'src/components/schedule'
+gsap.registerPlugin(ScrollTrigger)
 export const Details = () => {
   const container = useRef<HTMLDivElement>(null)
+  const registry = useRef<HTMLDivElement>(null)
 
-  useGSAP(
-    () => {
-      // gsap code here...
-      gsap.to('.moon', {
-        paddingLeft: 20,
-        duration: 3,
-        position: 'fixed',
-        top: 5,
-        delay: 5,
-        width: '7rem',
-      }) // <-- automatically reverted
-      gsap.to('.menu', {
-        display: 'block',
-        delay: 8,
-      })
-      gsap.to('.main', {
-        marginTop: 40,
-        delay: 5,
-        duration: 3,
-      })
-      gsap.to('.lake', {
-        display: 'none',
-        duration: 3,
-      })
-    },
-    { scope: container },
-  ) // <-- scope is for selector text (optional)
-
+  // useGSAP(
+  //   () => {
+  //     // const el = registry.current
+  //     // gsap code here...
+  //     gsap.to('.moon', {
+  //       paddingLeft: 20,
+  //       duration: 3,
+  //       position: 'fixed',
+  //       top: 5,
+  //       delay: 5,
+  //       width: '7rem',
+  //     }) // <-- automatically reverted
+  //     gsap.to('.menu', {
+  //       display: 'block',
+  //       delay: 8,
+  //     })
+  //     gsap.to('.main', {
+  //       marginTop: 40,
+  //       delay: 5,
+  //       duration: 3,
+  //     })
+  //     gsap.to('.lake', {
+  //       display: 'none',
+  //       duration: 3,
+  //     })
+  //     // gsap.to('.lake', {
+  //     //   scrollTrigger: { trigger: el }, // start the animation when ".box" enters the viewport (once)
+  //     //   x: 500,
+  //     //   display: 'block',
+  //     //   position: 'absolute',
+  //     // })
+  //   },
+  //   { scope: container },
+  // ) // <-- scope is for selector text (optional)
+  useEffect(() => {
+    const el = registry.current
+    gsap.to(el, {
+      backgroundColor: 'red',
+      duration: 1,
+      scrollTrigger: {
+        trigger: el,
+        // markers: true,
+      },
+    })
+  }, [])
   return (
     <div ref={container} className="flex min-h-screen flex-col justify-center">
       <div className="relative h-screen overflow-scroll bg-wedding-green">
@@ -59,8 +80,8 @@ export const Details = () => {
           <div className="fixed bottom-0">
             <img className="mb-5 ml-5 w-96" src={forestLeft} />
           </div>
-          <div className="col-start-2 ">
-            <div className=" text-center text-white">
+          <div className="col-start-2   ">
+            <div className="   text-center text-white">
               <p className="font-abel text-3xl">Chris & Jen</p>
               <p>June 8, 2024</p>
               <p>Come meet us in the mountains</p>
@@ -72,7 +93,9 @@ export const Details = () => {
             <RSVP />
             <Accomodations />
             <Transportation />
-            <Registry />
+            <div ref={registry} className="reg">
+              <Registry />
+            </div>
           </div>
 
           <div className="fixed bottom-0 right-0">
