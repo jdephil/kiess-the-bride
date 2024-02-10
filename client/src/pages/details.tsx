@@ -28,6 +28,11 @@ export const Details = () => {
         display: 'block',
         delay: 8,
       })
+      gsap.to('.main', {
+        marginTop: 40,
+        delay: 5,
+        duration: 3,
+      })
     },
     { scope: container },
   ) // <-- scope is for selector text (optional)
@@ -42,7 +47,7 @@ export const Details = () => {
           </div>
         </div>
         <Heading />
-        <main className="mt-72 grid grid-cols-3 ">
+        <main className="main mt-72 grid grid-cols-3 ">
           <div className="fixed bottom-0">
             <img className="mb-5 ml-5 w-96" src={forestLeft} />
           </div>
