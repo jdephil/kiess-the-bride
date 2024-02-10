@@ -9,7 +9,11 @@ import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import MyMenu from 'src/components/menu'
-
+import Registry from 'src/components/registry'
+import RSVP from 'src/components/rsvp'
+import Accomodations from 'src/components/accomodations'
+import Transportation from 'src/components/transportation'
+import Schedule from 'src/components/schedule'
 export const Details = () => {
   const container = useRef<HTMLDivElement>(null)
 
@@ -31,6 +35,10 @@ export const Details = () => {
       gsap.to('.main', {
         marginTop: 40,
         delay: 5,
+        duration: 3,
+      })
+      gsap.to('.lake', {
+        display: 'none',
         duration: 3,
       })
     },
@@ -56,7 +64,7 @@ export const Details = () => {
               <p className="">Chris & Jen</p>
               <p>June 8, 2024</p>
             </div>
-            <div className="">
+            <div className="lake">
               <img className="w-large" src={nightLake} />
             </div>
             <div>
@@ -68,6 +76,11 @@ export const Details = () => {
               Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
               publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </div>
+            <Schedule />
+            <RSVP />
+            <Accomodations />
+            <Transportation />
+            <Registry />
           </div>
 
           <div className="fixed bottom-0 right-0">
