@@ -13,11 +13,13 @@ export const Heading = () => {
         <img className="ml-72 mt-12 w-8" src={star3} />
         <img className="ml-10 mt-4 w-8" src={star1} />
         <img className="ml-96 mt-4 w-8" src={star3} />
-
-        {/* <img className="ml-10 mt-12 w-96" src={starsLeft} /> */}
       </div>
       <div className="fixed right-0">
-        <img className=" mt-12 w-96" src={starsRight} />
+        {/* <img className=" mt-12 w-96" src={starsRight} /> */}
+        <img className="mr-44 mt-14 w-8" src={star2} />
+        <img className="mr-72 mt-12 w-8" src={star1} />
+        <img className="mr-10 mt-4 w-8" src={star1} />
+        <img className="mr-96 mt-4 w-8" src={star3} />
       </div>
 
       <div className="pl-moon pb-12">
