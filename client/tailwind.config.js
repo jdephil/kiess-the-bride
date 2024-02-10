@@ -9,6 +9,10 @@ module.exports = {
         'wedding-green': '#31413d',
         'wedding-purple': '#897994',
       },
+      fontFamily: {
+        abel: ['Abel', 'sans-sarif'],
+        dmSans: ['DM Sans', 'sans-sarif'],
+      },
       backgroundImage: {
         daytime: "url('./src/assets/images/daytime.jpeg')",
       },

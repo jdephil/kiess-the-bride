@@ -55,27 +55,19 @@ export const Details = () => {
           </div>
         </div>
         <Heading />
-        <main className="main mt-72 grid grid-cols-3 ">
+        <main className="main font-dmSans mt-72 grid grid-cols-3 text-white ">
           <div className="fixed bottom-0">
             <img className="mb-5 ml-5 w-96" src={forestLeft} />
           </div>
-          <div className="col-start-2">
+          <div className="col-start-2 text-center">
             <div className=" text-center text-white">
-              <p className="">Chris & Jen</p>
+              <p className="font-abel text-3xl">Chris & Jen</p>
               <p>June 8, 2024</p>
             </div>
             <div className="lake">
               <img className="w-large" src={nightLake} />
             </div>
-            <div>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-              has been the industry's standard dummy text ever since the 1500s, when an unknown
-              printer took a galley of type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into electronic typesetting,
-              remaining essentially unchanged. It was popularised in the 1960s with the release of
-              Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </div>
+            <div>Come meet us in the mountains</div>
             <Schedule />
             <RSVP />
             <Accomodations />
