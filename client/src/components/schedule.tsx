@@ -1,9 +1,9 @@
 export default function Schedule() {
   return (
-    <div className="my-3 text-center">
-      <div className="font-abel text-3xl">Schedule</div>
+    <div className="my-3 ">
+      <div className="font-abel text-center text-3xl">Schedule</div>
 
-      <div className=" ">
+      <div className="mt-2 ">
         <p>Welcome Party</p>
         <p>Thursday June 6, 2024</p>
         <p>6:00 - 9:30pm</p>
@@ -12,7 +12,7 @@ export default function Schedule() {
         <p>567 Glendale Road</p>
         <p>Oakland, MD 21550</p>
       </div>
-      <div>
+      <div className="mt-2 ">
         <p>Rehersal Drinks</p>
         <p>Friday June 7, 2024</p>
         <p>8:00 - 10:00pm</p>
@@ -20,7 +20,7 @@ export default function Schedule() {
         <p>72 Fort Dr</p>
         <p>McHenry, MD 21541</p>
       </div>
-      <div>
+      <div className="mt-2 ">
         <p>Ceremony & Reception</p>
         <p>Saturday June 8, 2024</p>
         <p>5:30pm</p>

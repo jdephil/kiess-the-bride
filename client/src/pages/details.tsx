@@ -59,15 +59,15 @@ export const Details = () => {
           <div className="fixed bottom-0">
             <img className="mb-5 ml-5 w-96" src={forestLeft} />
           </div>
-          <div className="col-start-2 text-center">
+          <div className="col-start-2 ">
             <div className=" text-center text-white">
               <p className="font-abel text-3xl">Chris & Jen</p>
               <p>June 8, 2024</p>
+              <p>Come meet us in the mountains</p>
             </div>
             <div className="lake">
               <img className="w-large" src={nightLake} />
             </div>
-            <div>Come meet us in the mountains</div>
             <Schedule />
             <RSVP />
             <Accomodations />
