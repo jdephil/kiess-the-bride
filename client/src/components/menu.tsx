@@ -29,6 +29,7 @@ export default function MyMenu() {
               <Menu.Item>
                 {({ active }) => (
                   <HashLink
+                    smooth
                     to="/details#schedule"
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
@@ -41,6 +42,7 @@ export default function MyMenu() {
               <Menu.Item>
                 {({ active }) => (
                   <HashLink
+                    smooth
                     to="/details#rsvp"
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
@@ -55,6 +57,7 @@ export default function MyMenu() {
               <Menu.Item>
                 {({ active }) => (
                   <HashLink
+                    smooth
                     to="/details#accomodations"
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
@@ -67,6 +70,7 @@ export default function MyMenu() {
               <Menu.Item>
                 {({ active }) => (
                   <HashLink
+                    smooth
                     to="/details#transportation"
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
@@ -81,6 +85,7 @@ export default function MyMenu() {
               <Menu.Item>
                 {({ active }) => (
                   <HashLink
+                    smooth
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
