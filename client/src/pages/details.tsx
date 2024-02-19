@@ -80,9 +80,8 @@ export const Details = () => {
           </div>
           <div className="col-start-2   ">
             <div className="   text-center text-white">
-              <p className="font-abel text-3xl">Chris & Jen</p>
-              <p>June 8, 2024</p>
-              <p>Come meet us in the mountains</p>
+              <p className="mb-5 font-abel text-6xl">Chris & Jen</p>
+              <p>Meet us in the mountains</p>
             </div>
             <div className="lake">
               <img className="w-large" src={nightLake} />
