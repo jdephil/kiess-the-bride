@@ -3,7 +3,7 @@ from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 
-from .models import User
+from .models import Family, Guest, User
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -68,3 +68,17 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
+
+
+class FamilySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Family
+        fields = ("id", "last_name")
+
+
+class GuestSerializer(serializers.ModelSerializer):
+    family_ref = FamilySerializer(source="family", read_only=True)
+
+    class Meta:
+        model = Guest
+        fields = ("id", "last_name", "first_name", "attending", "dietary_restrictions", "family", "family_ref")
