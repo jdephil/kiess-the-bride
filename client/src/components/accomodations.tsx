@@ -1,28 +1,55 @@
+import ExportLink from './locationLink'
+
 export default function Accomodations() {
   return (
     <div id="accomodations" className="my-3  ">
-      <div className="text-center font-abel text-3xl tracking-wide">Accommodations</div>
+      <div className="mb-7 text-center font-abel text-3xl tracking-wide ">Accommodations</div>
       <div className="mt-2 ">
-        <div className="mt-2 ">
-          <p className="m-auto w-[70%] border-b-2 pb-2 text-xl">Blue Moon Rising Cabins</p>
-          <p>Stay onsite with Chris & Jen!</p>
-          <p>$300/night, 2 night minimum</p>
+        <div className="mt-5 ">
+          <p className="m-auto w-[70%] border-b-2 pb-2 text-xl text-wedding-yellow">
+            Blue Moon Rising Cabins
+          </p>
+          <p className="my-5">Stay onsite with Chris & Jen!</p>
+
+          <a
+            className=" underline"
+            target="_blank"
+            rel="noreferrer"
+            href="https://bluemoonrising.org/explore-interactive-map/"
+          >
+            Property & Cabin Map
+          </a>
+          <p className="mt-5">$300/night, 2 night minimum</p>
           <p>Call front desk and mention our names</p>
-          <p>89 Blue Moon Rising Way</p>
-          <p>McHenry, MD 21541</p>
+          <ExportLink
+            link={'https://maps.app.goo.gl/rmJpvFJG6y2FXtvb7'}
+            streetAddress={'89 Blue Moon Rising Way'}
+            cityStateZip={'McHenry, MD 21541'}
+          />
         </div>
         <div className="mt-2 ">
-          <p>The Suites at Silver Tree</p>
-          <p>Room block with studio, 1 & 2 bedrooms</p>
-          <p>$129/night and up</p>
+          <p className="m-auto w-[70%] border-b-2 pb-2 text-xl text-wedding-yellow">
+            The Suites at Silver Tree
+          </p>
+          <p className="my-5">Room block with studio, 1 & 2 bedrooms</p>
+          <a className=" underline" href="www.suitesatsilvertree.com/">
+            Suites at Silver Tree
+          </a>
+          <p className="mt-5">$129/night and up</p>
           <p>Use our code at checkout</p>
-          <a href="www.suitesatsilvertree.com/">Suites at Silver Tree</a>
-          <p>567 Glendale Road</p>
-          <p>Oakland, MD 21550</p>
+
+          <ExportLink
+            link={'https://maps.app.goo.gl/vJ2YwpHc6bXcXGU89'}
+            streetAddress={'567 Glendale Road'}
+            cityStateZip={'Oakland, MD 21550'}
+          />
         </div>
         <div className="mt-2 ">
-          <p>Other Options</p>
-          <p>Deep Creek Inn</p>
+          <p className="m-auto w-[70%] border-b-2 pb-2 text-xl text-wedding-yellow">
+            Other Options
+          </p>
+          <p className="mt-5">Inn at Deep Creek</p>
+          <p>LakeFront Lodge</p>
           <p>Wisp Resort</p>
           <p>Airbnb</p>
           <p>vrbo</p>
