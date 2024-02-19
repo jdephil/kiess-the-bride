@@ -16,13 +16,27 @@ from rest_framework.decorators import (
     permission_classes,
 )
 from rest_framework.exceptions import ValidationError
+from rest_framework.mixins import (
+    CreateModelMixin,
+    DestroyModelMixin,
+    ListModelMixin,
+    RetrieveModelMixin,
+    UpdateModelMixin,
+)
 from rest_framework.response import Response
+from rest_framework.viewsets import GenericViewSet
 
 from kiess_the_bride.utils.emails import send_html_email
 
-from .models import User
+from .models import Family, Guest, User
 from .permissions import CreateOnlyPermissions
-from .serializers import UserLoginSerializer, UserRegistrationSerializer, UserSerializer
+from .serializers import (
+    FamilySerializer,
+    GuestSerializer,
+    UserLoginSerializer,
+    UserRegistrationSerializer,
+    UserSerializer,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -178,3 +192,14 @@ class PreviewTemplateView(views.APIView):
             model, pk = value.split(":")
             value = apps.get_model(model).objects.get(pk=pk)
         return key, value
+
+
+class FamilyViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateModelMixin, UpdateModelMixin, DestroyModelMixin):
+    queryset = Family.objects.all()
+    serializer_class = FamilySerializer
+
+
+class GuestViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateModelMixin, UpdateModelMixin, DestroyModelMixin):
+    queryset = Guest.objects.all()
+    filter_fields = ("family",)
+    serializer_class = GuestSerializer
