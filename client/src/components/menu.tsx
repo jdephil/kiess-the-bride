@@ -1,6 +1,7 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { Bars3Icon } from '@heroicons/react/20/solid'
+import { HashLink } from 'react-router-hash-link'
 
 export default function MyMenu() {
   return (
@@ -27,61 +28,66 @@ export default function MyMenu() {
             <div className="px-1 ">
               <Menu.Item>
                 {({ active }) => (
-                  <button
+                  <HashLink
+                    to="/details#schedule"
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                   >
                     Schedule
-                  </button>
+                  </HashLink>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <button
+                  <HashLink
+                    to="/details#rsvp"
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                   >
                     RSVP
-                  </button>
+                  </HashLink>
                 )}
               </Menu.Item>
             </div>
             <div className="px-1 ">
               <Menu.Item>
                 {({ active }) => (
-                  <button
+                  <HashLink
+                    to="/details#accomodations"
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                   >
                     Accomodations
-                  </button>
+                  </HashLink>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <button
+                  <HashLink
+                    to="/details#transportation"
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                   >
                     Transportation
-                  </button>
+                  </HashLink>
                 )}
               </Menu.Item>
             </div>
             <div className="px-1 ">
               <Menu.Item>
                 {({ active }) => (
-                  <button
+                  <HashLink
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    to="/details#registry"
                   >
                     Registry
-                  </button>
+                  </HashLink>
                 )}
               </Menu.Item>
             </div>
