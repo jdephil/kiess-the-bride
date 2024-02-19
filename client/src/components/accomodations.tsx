@@ -32,7 +32,7 @@ export default function Accomodations() {
             The Suites at Silver Tree
           </p>
           <p className="my-5">Room block with studio, 1 & 2 bedrooms</p>
-          <a className=" underline" href="www.suitesatsilvertree.com/">
+          <a className=" underline" href="https://www.suitesatsilvertree.com/">
             Suites at Silver Tree
           </a>
           <p className="mt-5">$129/night and up</p>
