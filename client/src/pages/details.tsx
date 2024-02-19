@@ -19,6 +19,7 @@ gsap.registerPlugin(ScrollTrigger)
 export const Details = () => {
   const container = useRef<HTMLDivElement>(null)
   const registry = useRef<HTMLDivElement>(null)
+
   useGSAP(
     () => {
       // const el = registry.current
@@ -28,7 +29,7 @@ export const Details = () => {
         duration: 3,
         position: 'fixed',
         top: 5,
-        delay: 5,
+        delay: 2,
         width: '7rem',
       }) // <-- automatically reverted
       gsap.to('.menu', {
@@ -40,10 +41,16 @@ export const Details = () => {
         delay: 5,
         duration: 3,
       })
-      gsap.to('.lake', {
-        display: 'none',
-        duration: 3,
+      gsap.from('.details', {
+        opacity: 0,
+        delay: 5,
+        duration: 2,
       })
+      gsap.to('.content', {
+        overflowY: 'scroll',
+        delay: 5,
+      })
+
       // gsap.to('.lake', {
       //   scrollTrigger: { trigger: el }, // start the animation when ".box" enters the viewport (once)
       //   x: 500,
@@ -74,32 +81,30 @@ export const Details = () => {
           </div>
         </div>
         <Heading />
-        <main className="main mt-72 grid grid-cols-3 font-dmSans text-white ">
-          <div className="fixed bottom-0">
+        <main className="main grid-rows-detailsMain mt-72 grid h-screen  grid-cols-3  font-dmSans text-white">
+          <div className="fixed bottom-0 row-span-2">
             <img className="mb-5 ml-5 w-96" src={forestLeft} />
           </div>
-          <div className="col-start-2   ">
-            <div className="   text-center text-white">
-              <p className="font-abel text-3xl">Chris & Jen</p>
-              <p>June 8, 2024</p>
-              <p>Come meet us in the mountains</p>
-            </div>
-            <div className="lake">
-              <img className="w-large" src={nightLake} />
-            </div>
-
-            <Schedule />
-
-            <RSVP />
-
-            <Accomodations />
-            <Transportation />
-            <div ref={registry} id="registry" className="reg">
-              <Registry />
+          <div className="content row-start-0 col-start-2 row-end-1 min-w-0">
+            <div className="text-center text-white">
+              <p className="mb-5 font-abel text-6xl">Chris & Jen</p>
+              <p>Meet us in the mountains</p>
+              <div className="details">
+                <Schedule />
+                <RSVP />
+                <Accomodations />
+                <Transportation />
+                <div ref={registry} id="registry" className="reg">
+                  <Registry />
+                </div>
+              </div>
             </div>
           </div>
+          <div className="lake col-start-2 row-start-1">
+            <img className="w-large" src={nightLake} />
+          </div>
 
-          <div className="fixed bottom-0 right-0">
+          <div className="row-span1 fixed bottom-0 right-0">
             <img className="mb-5 mr-5 w-96" src={forestRight} />
           </div>
         </main>

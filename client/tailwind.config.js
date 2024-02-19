@@ -23,6 +23,9 @@ module.exports = {
       width: {
         large: '28rem',
       },
+      gridTemplateRows: {
+        detailsMain: 'minmax(0, 1fr) 275px',
+      },
     },
   },
   plugins: [],
