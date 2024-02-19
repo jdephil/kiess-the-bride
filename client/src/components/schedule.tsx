@@ -12,7 +12,7 @@ export default function Schedule() {
         <p>6:00 PM to 9:30 PM</p>
         <p>Dutch&apos;s at Silver Tree</p>
         <p>Patio Bar</p>
-        <a target="_blank" href="https://maps.app.goo.gl/fhXvFcx2AZngL2yT6">
+        <a target="_blank" rel="noreferrer" href="https://maps.app.goo.gl/fhXvFcx2AZngL2yT6">
           <div className="mb-10 mt-5 flex items-center justify-center pr-10">
             <img className="h-10 w-10 fill-wedding-yellow text-wedding-yellow " src={locationPin} />
             <div className=" flex flex-col underline">
@@ -29,7 +29,7 @@ export default function Schedule() {
         </p>
         <p>7:00 PM to 9:00 PM</p>
         <p>Deep Creek Fun Zone</p>
-        <a target="_blank" href="https://maps.app.goo.gl/iSLVh1iZyfQdccUE7">
+        <a target="_blank" rel="noreferrer" href="https://maps.app.goo.gl/iSLVh1iZyfQdccUE7">
           <div className="mt-5 flex items-center justify-center pr-10">
             <img className="h-10 w-10 fill-wedding-yellow text-wedding-yellow " src={locationPin} />
             <div className=" flex flex-col underline">
@@ -46,7 +46,7 @@ export default function Schedule() {
         </p>
         <p>5:30 PM</p>
         <p>Blue Moon Rising</p>
-        <a target="_blank" href="https://maps.app.goo.gl/rmJpvFJG6y2FXtvb7">
+        <a target="_blank" rel="noreferrer" href="https://maps.app.goo.gl/rmJpvFJG6y2FXtvb7">
           <div className="mt-5 flex items-center justify-center pr-10">
             <img className="h-10 w-10 fill-wedding-yellow text-wedding-yellow " src={locationPin} />
             <div className=" flex flex-col underline">
