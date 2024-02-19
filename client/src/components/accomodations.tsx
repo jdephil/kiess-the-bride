@@ -1,11 +1,11 @@
 export default function Accomodations() {
   return (
     <div id="accomodations" className="my-3  ">
-      <div className="font-abel text-3xl">Accommodations</div>
+      <div className="text-center font-abel text-3xl tracking-wide">Accommodations</div>
       <div className="mt-2 ">
         <div className="mt-2 ">
+          <p className="m-auto w-[70%] border-b-2 pb-2 text-xl">Blue Moon Rising Cabins</p>
           <p>Stay onsite with Chris & Jen!</p>
-          <p>Blue Moon Rising Cabins</p>
           <p>$300/night, 2 night minimum</p>
           <p>Call front desk and mention our names</p>
           <p>89 Blue Moon Rising Way</p>

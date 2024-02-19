@@ -1,4 +1,4 @@
-import locationPin from 'src/assets/images/locationPin.svg'
+import ExportLink from './locationLink'
 
 export default function Schedule() {
   return (
@@ -12,15 +12,12 @@ export default function Schedule() {
         <p>6:00 PM to 9:30 PM</p>
         <p>Dutch&apos;s at Silver Tree</p>
         <p>Patio Bar</p>
-        <a target="_blank" rel="noreferrer" href="https://maps.app.goo.gl/fhXvFcx2AZngL2yT6">
-          <div className="mb-10 mt-5 flex items-center justify-center pr-10">
-            <img className="h-10 w-10 fill-wedding-yellow text-wedding-yellow " src={locationPin} />
-            <div className=" flex flex-col underline">
-              <p>567 Glendale Road</p>
-              <p>Oakland, MD 21550</p>
-            </div>
-          </div>
-        </a>
+
+        <ExportLink
+          link={'https://maps.app.goo.gl/fhXvFcx2AZngL2yT6'}
+          streetAddress={'567 Glendale Road'}
+          cityStateZip={'Oakland, MD 21550'}
+        />
       </div>
       <div className=" mt-7">
         <p className="m-auto w-[70%] border-b-2 pb-2 text-xl">Friday June 7, 2024</p>
@@ -29,15 +26,11 @@ export default function Schedule() {
         </p>
         <p>7:00 PM to 9:00 PM</p>
         <p>Deep Creek Fun Zone</p>
-        <a target="_blank" rel="noreferrer" href="https://maps.app.goo.gl/iSLVh1iZyfQdccUE7">
-          <div className="mt-5 flex items-center justify-center pr-10">
-            <img className="h-10 w-10 fill-wedding-yellow text-wedding-yellow " src={locationPin} />
-            <div className=" flex flex-col underline">
-              <p>72 Fort Drive</p>
-              <p>McHenry, MD 21541</p>
-            </div>
-          </div>
-        </a>
+        <ExportLink
+          link={'https://maps.app.goo.gl/iSLVh1iZyfQdccUE7'}
+          streetAddress={'72 Fort Drive'}
+          cityStateZip={'McHenry, MD 21541'}
+        />
       </div>
       <div className="mt-7 ">
         <p className="m-auto w-[70%] border-b-2 pb-2 text-xl">Saturday June 8, 2024</p>
@@ -46,15 +39,11 @@ export default function Schedule() {
         </p>
         <p>5:30 PM</p>
         <p>Blue Moon Rising</p>
-        <a target="_blank" rel="noreferrer" href="https://maps.app.goo.gl/rmJpvFJG6y2FXtvb7">
-          <div className="mt-5 flex items-center justify-center pr-10">
-            <img className="h-10 w-10 fill-wedding-yellow text-wedding-yellow " src={locationPin} />
-            <div className=" flex flex-col underline">
-              <p className="pl-1">89 Blue Moon Rising Way</p>
-              <p>McHenry, MD 21541</p>
-            </div>
-          </div>
-        </a>
+        <ExportLink
+          link={'https://maps.app.goo.gl/rmJpvFJG6y2FXtvb7'}
+          streetAddress={'89 Blue Moon Rising Way'}
+          cityStateZip={'McHenry, MD 21541'}
+        />
       </div>
     </div>
   )
