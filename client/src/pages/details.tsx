@@ -19,6 +19,7 @@ gsap.registerPlugin(ScrollTrigger)
 export const Details = () => {
   const container = useRef<HTMLDivElement>(null)
   const registry = useRef<HTMLDivElement>(null)
+
   useGSAP(
     () => {
       // const el = registry.current
@@ -40,10 +41,16 @@ export const Details = () => {
         delay: 5,
         duration: 3,
       })
-      // gsap.to('.lake', {
-      //   display: 'none',
-      //   duration: 3,
-      // })
+      gsap.from('.details', {
+        opacity: 0,
+        delay: 5,
+        duration: 2,
+      })
+      gsap.to('.content', {
+        overflowY: 'scroll',
+        delay: 5,
+      })
+
       // gsap.to('.lake', {
       //   scrollTrigger: { trigger: el }, // start the animation when ".box" enters the viewport (once)
       //   x: 500,
@@ -74,22 +81,22 @@ export const Details = () => {
           </div>
         </div>
         <Heading />
-        <main className="main grid-rows-detailsMain mt-72 grid h-full  grid-cols-3  font-dmSans text-white">
+        <main className="main grid-rows-detailsMain mt-72 grid h-screen  grid-cols-3  font-dmSans text-white">
           <div className="fixed bottom-0 row-span-2">
             <img className="mb-5 ml-5 w-96" src={forestLeft} />
           </div>
-          <div className="row-start-0 col-start-2 row-end-1 min-w-0 overflow-auto  ">
-            <div className="   text-center text-white">
+          <div className="content row-start-0 col-start-2 row-end-1 min-w-0">
+            <div className="text-center text-white">
               <p className="mb-5 font-abel text-6xl">Chris & Jen</p>
               <p>Meet us in the mountains</p>
-              <Schedule />
-
-              <RSVP />
-
-              <Accomodations />
-              <Transportation />
-              <div ref={registry} id="registry" className="reg">
-                <Registry />
+              <div className="details">
+                <Schedule />
+                <RSVP />
+                <Accomodations />
+                <Transportation />
+                <div ref={registry} id="registry" className="reg">
+                  <Registry />
+                </div>
               </div>
             </div>
           </div>
