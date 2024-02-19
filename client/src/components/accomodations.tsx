@@ -1,6 +1,6 @@
 export default function Accomodations() {
   return (
-    <div className="my-3  ">
+    <div id="accomodations" className="my-3  ">
       <div className="font-abel text-3xl">Accommodations</div>
       <div className="mt-2 ">
         <div className="mt-2 ">

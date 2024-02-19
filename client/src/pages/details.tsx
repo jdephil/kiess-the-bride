@@ -2,8 +2,6 @@ import { useEffect } from 'react'
 import { Heading } from 'src/components/heading'
 import forestLeft from 'src/assets/images/nightime_forest_left.png'
 import forestRight from 'src/assets/images/nighttime_forest_right.png'
-import starsLeft from 'src/assets/images/left_stars.png'
-import starsRight from 'src/assets/images/right_stars.png'
 import moon from 'src/assets/images/moon.png'
 import nightLake from 'src/assets/images/lake-night.png'
 import { useRef } from 'react'
@@ -16,45 +14,45 @@ import RSVP from 'src/components/rsvp'
 import Accomodations from 'src/components/accomodations'
 import Transportation from 'src/components/transportation'
 import Schedule from 'src/components/schedule'
+
 gsap.registerPlugin(ScrollTrigger)
 export const Details = () => {
   const container = useRef<HTMLDivElement>(null)
   const registry = useRef<HTMLDivElement>(null)
-
-  // useGSAP(
-  //   () => {
-  //     // const el = registry.current
-  //     // gsap code here...
-  //     gsap.to('.moon', {
-  //       paddingLeft: 20,
-  //       duration: 3,
-  //       position: 'fixed',
-  //       top: 5,
-  //       delay: 5,
-  //       width: '7rem',
-  //     }) // <-- automatically reverted
-  //     gsap.to('.menu', {
-  //       display: 'block',
-  //       delay: 8,
-  //     })
-  //     gsap.to('.main', {
-  //       marginTop: 40,
-  //       delay: 5,
-  //       duration: 3,
-  //     })
-  //     gsap.to('.lake', {
-  //       display: 'none',
-  //       duration: 3,
-  //     })
-  //     // gsap.to('.lake', {
-  //     //   scrollTrigger: { trigger: el }, // start the animation when ".box" enters the viewport (once)
-  //     //   x: 500,
-  //     //   display: 'block',
-  //     //   position: 'absolute',
-  //     // })
-  //   },
-  //   { scope: container },
-  // ) // <-- scope is for selector text (optional)
+  useGSAP(
+    () => {
+      // const el = registry.current
+      // gsap code here...
+      gsap.to('.moon', {
+        paddingLeft: 20,
+        duration: 3,
+        position: 'fixed',
+        top: 5,
+        delay: 5,
+        width: '7rem',
+      }) // <-- automatically reverted
+      gsap.to('.menu', {
+        display: 'block',
+        delay: 8,
+      })
+      gsap.to('.main', {
+        marginTop: 40,
+        delay: 5,
+        duration: 3,
+      })
+      gsap.to('.lake', {
+        display: 'none',
+        duration: 3,
+      })
+      // gsap.to('.lake', {
+      //   scrollTrigger: { trigger: el }, // start the animation when ".box" enters the viewport (once)
+      //   x: 500,
+      //   display: 'block',
+      //   position: 'absolute',
+      // })
+    },
+    { scope: container },
+  ) // <-- scope is for selector text (optional)
   useEffect(() => {
     const el = registry.current
     gsap.to(el, {
@@ -69,14 +67,14 @@ export const Details = () => {
   return (
     <div ref={container} className="flex min-h-screen flex-col justify-center">
       <div className="relative h-screen overflow-scroll bg-wedding-green">
-        <div className="moon pl-moon absolute z-10">
+        <div className="moon absolute z-10 pl-moon">
           <img className="w-36" src={moon} />
           <div className="menu hidden">
             <MyMenu />
           </div>
         </div>
         <Heading />
-        <main className="main font-dmSans mt-72 grid grid-cols-3 text-white ">
+        <main className="main mt-72 grid grid-cols-3 font-dmSans text-white ">
           <div className="fixed bottom-0">
             <img className="mb-5 ml-5 w-96" src={forestLeft} />
           </div>
@@ -89,11 +87,14 @@ export const Details = () => {
             <div className="lake">
               <img className="w-large" src={nightLake} />
             </div>
+
             <Schedule />
+
             <RSVP />
+
             <Accomodations />
             <Transportation />
-            <div ref={registry} className="reg">
+            <div ref={registry} id="registry" className="reg">
               <Registry />
             </div>
           </div>

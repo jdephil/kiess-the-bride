@@ -1,7 +1,7 @@
 export default function Schedule() {
   return (
-    <div className="my-3  ">
-      <div className="font-abel text-center text-3xl">Schedule</div>
+    <div id="schedule" className="my-3  ">
+      <div className="text-center font-abel text-3xl">Schedule</div>
 
       <div className="mt-2 ">
         <p>Welcome Party</p>

@@ -10,28 +10,8 @@ import star3 from 'src/assets/images/star_3.png'
 export const Heading = () => {
   const container = useRef<HTMLDivElement>(null)
 
-  useGSAP(
-    () => {
-      // gsap code here...
-      gsap.to('.moon', {
-        paddingLeft: 0,
-        duration: 3,
-        // scale: 0.5,
-        position: 'fixed',
-        top: 5,
-        delay: 5,
-        width: '7rem',
-      }) // <-- automatically reverted
-      gsap.to('.menu', {
-        display: 'block',
-        delay: 8,
-      })
-    },
-    { scope: container },
-  ) // <-- scope is for selector text (optional)
-
   return (
-    <div ref={container}>
+    <div>
       <div className="fixed left-0 ">
         <img className="ml-44 mt-14 w-8" src={star2} />
         <img className="ml-72 mt-12 w-8" src={star3} />
