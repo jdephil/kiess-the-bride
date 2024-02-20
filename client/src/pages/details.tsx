@@ -14,12 +14,34 @@ import RSVP from 'src/components/rsvp'
 import Accomodations from 'src/components/accomodations'
 import Transportation from 'src/components/transportation'
 import Schedule from 'src/components/schedule'
+import { guestApi } from 'src/services/guest'
+import { useMutation, useQuery } from '@tanstack/react-query'
+import { Pagination } from '@thinknimble/tn-models'
 
 gsap.registerPlugin(ScrollTrigger)
 export const Details = () => {
+  const pagination = new Pagination({ page: 1, size: 25 })
   const container = useRef<HTMLDivElement>(null)
   const registry = useRef<HTMLDivElement>(null)
-
+  // const { mutate, isLoading } = useMutation({
+  //   mutationFn: guestApi.csc.update,
+  //   onSuccess: (data: any) => {
+  //     console.log(data)
+  //   },
+  //   onError: (e: any) => {
+  //     console.log(e)
+  //   },
+  // })
+  // const { data: guest, loading } = useQuery({
+  //   queryKey: ['guests', firstName, lastName, pagination],
+  //   queryFn: async () => {
+  //     const content = await guestApi.csc.list({
+  //       filters: { firstName: firstName, lastName: lastName },
+  //       input: { pagination },
+  //     })
+  //     return content
+  //   },
+  // })
   useGSAP(
     () => {
       // const el = registry.current

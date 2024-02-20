@@ -1,19 +1,30 @@
-import { createApi, createCustomServiceCall } from '@thinknimble/tn-models'
+import {
+  createApi,
+  createCustomServiceCall,
+  createPaginatedServiceCall,
+} from '@thinknimble/tn-models'
 import { guestShape, guestUpdateShape } from './models'
 import { axiosInstance } from '../axios-instance'
+import { z } from 'zod'
 
 const update = createCustomServiceCall(
   {
     inputShape: guestUpdateShape,
     outputShape: guestShape,
   },
-  async ({ client, slashEndingBaseUri, input, utils: { toApi, fromApi } }) => {
+  async ({ client, input, utils: { toApi, fromApi } }) => {
     const { id, ...rest } = toApi(input)
-    const res = await client.patch(`${slashEndingBaseUri}${id}/`, rest)
+    const res = await client.patch(`/guests/${id}/`, rest)
     return fromApi(res.data)
   },
 )
-
+const list = createPaginatedServiceCall({
+  outputShape: guestShape,
+  filtersShape: {
+    firstName: z.string(),
+    lastName: z.string(),
+  },
+})
 export const guestApi = createApi(
   {
     client: axiosInstance,
@@ -22,5 +33,5 @@ export const guestApi = createApi(
       entity: guestShape,
     },
   },
-  { update },
+  { update, list },
 )
