@@ -30,9 +30,10 @@ from rest_framework.viewsets import GenericViewSet
 from kiess_the_bride.utils.emails import send_html_email
 
 from .filters import GuestFilter
-from .models import Family, Guest, User
+from .models import Event, Family, Guest, User
 from .permissions import CreateOnlyPermissions
 from .serializers import (
+    EventSerializer,
     FamilySerializer,
     GuestSerializer,
     UserLoginSerializer,
@@ -204,5 +205,10 @@ class FamilyViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateMo
 class GuestViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateModelMixin, UpdateModelMixin, DestroyModelMixin):
     queryset = Guest.objects.all()
     filter = GuestFilter
-    filter_fields = ("family",)
+    filter_fields = ("family", "events")
     serializer_class = GuestSerializer
+
+
+class EventViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateModelMixin, UpdateModelMixin, DestroyModelMixin):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer

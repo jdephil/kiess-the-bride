@@ -8,7 +8,7 @@ from kiess_the_bride.common.admin.filters import (
     AutocompleteFilter,
 )
 
-from .models import Family, Guest, User
+from .models import Event, Family, Guest, User
 
 
 class CustomUserAdmin(UserAdmin):
@@ -84,3 +84,4 @@ admin.site.unregister(Group)
 admin.site.register(Group, CustomGroupAdmin)
 admin.site.register(Family)
 admin.site.register(Guest)
+admin.site.register(Event)

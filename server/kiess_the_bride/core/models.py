@@ -100,4 +100,4 @@ class Guest(AbstractBaseModel):
     events = models.ManyToManyField("Event", related_name="guest")
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return self.full_name

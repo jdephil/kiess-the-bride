@@ -16,4 +16,4 @@ class GuestFilter(FilterSet):
 
     class Meta:
         model = Guest
-        fields = ["first_name", "last_name"]
+        fields = ["full_name"]
