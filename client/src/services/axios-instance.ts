@@ -11,25 +11,25 @@ export const axiosInstance = axios.create({
   },
 })
 
-axiosInstance.interceptors.request.use(
-  async (config) => {
-    const { token } = useAuth.getState()
-    if (token) {
-      const authHeader = `Token ${token}`
-      const csrfToken = getCookie('csrftoken')
-      if (config.headers) {
-        config.headers.Authorization = authHeader
-        config.headers['X-CSRFToken'] = csrfToken
-      } else {
-        config.headers = new axios.AxiosHeaders({
-          Authorization: authHeader,
-          'X-CSRFToken': csrfToken,
-        })
-      }
-    }
-    return { ...config }
-  },
-  (error: Error | AxiosError) => {
-    return Promise.reject(error)
-  },
-)
+// axiosInstance.interceptors.request.use(
+//   async (config) => {
+//     const { token } = useAuth.getState()
+//     if (token) {
+//       const authHeader = `Token ${token}`
+//       const csrfToken = getCookie('csrftoken')
+//       if (config.headers) {
+//         config.headers.Authorization = authHeader
+//         config.headers['X-CSRFToken'] = csrfToken
+//       } else {
+//         config.headers = new axios.AxiosHeaders({
+//           Authorization: authHeader,
+//           'X-CSRFToken': csrfToken,
+//         })
+//       }
+//     }
+//     return { ...config }
+//   },
+//   (error: Error | AxiosError) => {
+//     return Promise.reject(error)
+//   },
+// )

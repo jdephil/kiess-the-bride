@@ -3,10 +3,10 @@ import { guestApi } from 'src/services/guest'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { Pagination } from '@thinknimble/tn-models'
 import { Input } from './input'
+import { Button } from './button'
 export default function RSVP() {
   const pagination = new Pagination({ page: 1, size: 25 })
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
+  const [fullName, setFullName] = useState('')
 
   const { mutate, isLoading } = useMutation({
     mutationFn: guestApi.csc.update,
@@ -18,13 +18,23 @@ export default function RSVP() {
     },
   })
   const { data: guest, loading } = useQuery({
-    queryKey: ['guests', firstName, lastName, pagination],
+    queryKey: ['guests', fullName, pagination],
+
     queryFn: async () => {
+      // const guest
+
       const content = await guestApi.csc.list({
-        filters: { firstName: 'Jennifer', lastName: 'De Phillips' },
         input: { pagination },
+        filters: { fullName },
       })
       return content
+    },
+
+    onSuccess: (data) => {
+      console.log(data)
+    },
+    onError: (e) => {
+      console.log(e)
     },
   })
 
@@ -34,8 +44,8 @@ export default function RSVP() {
     <div id="rsvp" className="my-3  ">
       <div className="font-abel text-3xl">RSVP</div>
       <form>
-        <Input onChange={(e) => setFirstName(e.target.value)} id="firstName" />
-        <Input onChange={(e) => setLastName(e.target.value)} id="lastName" />
+        <Input onChange={(e) => setFullName(e.target.value)} id="firstName" />
+        <Button>Submit</Button>
       </form>
     </div>
   )

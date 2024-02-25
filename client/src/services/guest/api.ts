@@ -21,8 +21,7 @@ const update = createCustomServiceCall(
 const list = createPaginatedServiceCall({
   outputShape: guestShape,
   filtersShape: {
-    firstName: z.string(),
-    lastName: z.string(),
+    fullName: z.string(),
   },
 })
 export const guestApi = createApi(

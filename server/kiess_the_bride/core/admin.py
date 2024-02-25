@@ -76,6 +76,17 @@ class PermissionAdmin(admin.ModelAdmin):
     search_fields = ("name", "content_type__app_label", "content_type__model", "codename")
 
 
+@admin.register(Event)
+class CustomEventAdmin(admin.ModelAdmin):
+    search_fields = ("name",)
+
+
+@admin.register(Guest)
+class CustomGuestAdmin(admin.ModelAdmin):
+    search_fields = ("full_name",)
+    autocomplete_fields = ("events",)
+
+
 admin.site.register(User, CustomUserAdmin)
 
 # Since Django's contrib apps already register Group to the admin site, we need to remove it and add it again
@@ -83,5 +94,3 @@ admin.site.register(User, CustomUserAdmin)
 admin.site.unregister(Group)
 admin.site.register(Group, CustomGroupAdmin)
 admin.site.register(Family)
-admin.site.register(Guest)
-admin.site.register(Event)

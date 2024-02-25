@@ -97,7 +97,7 @@ class Guest(AbstractBaseModel):
     dietary_restrictions = models.TextField(blank=True)
     email = models.CharField(blank=True, max_length=255)
     family = models.ForeignKey(Family, on_delete=django.db.models.deletion.CASCADE)
-    events = models.ManyToManyField("Event", related_name="guest")
+    events = models.ManyToManyField("Event", related_name="guest", blank=True)
 
     def __str__(self):
         return self.full_name

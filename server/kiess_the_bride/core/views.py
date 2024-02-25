@@ -9,7 +9,10 @@ from django.db import transaction
 from django.http import Http404
 from django.shortcuts import render
 from django.template import TemplateDoesNotExist
+from django.views.decorators.csrf import csrf_exempt
 from django_filters.rest_framework import DjangoFilterBackend
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, mixins, permissions, status, views, viewsets
 from rest_framework.decorators import (
     api_view,
@@ -31,7 +34,7 @@ from kiess_the_bride.utils.emails import send_html_email
 
 from .filters import GuestFilter
 from .models import Event, Family, Guest, User
-from .permissions import CreateOnlyPermissions
+from .permissions import CreateOnlyPermissions, ReadOnly
 from .serializers import (
     EventSerializer,
     FamilySerializer,
@@ -204,7 +207,8 @@ class FamilyViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateMo
 
 class GuestViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateModelMixin, UpdateModelMixin, DestroyModelMixin):
     queryset = Guest.objects.all()
-    filter = GuestFilter
+    filter_class = GuestFilter
+
     filter_fields = ("family", "events")
     serializer_class = GuestSerializer
 
@@ -212,3 +216,17 @@ class GuestViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateMod
 class EventViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateModelMixin, UpdateModelMixin, DestroyModelMixin):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+
+
+# get_guest_request_body = openapi.Schema(
+#     type=openapi.TYPE_OBJECT,
+#     properties={
+#         "full_name": openapi.Schema(type=openapi.TYPE_STRING, description="guest full name"),
+#     },
+# )
+
+
+# @api_view(["get"])
+# @permission_classes([permissions.AllowAny])
+# def get_guest(request, *args, **kwargs):
+#     return Guest.objects.filter(full_name=request["full_name"])

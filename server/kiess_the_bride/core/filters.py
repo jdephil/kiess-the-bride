@@ -7,12 +7,9 @@ from kiess_the_bride.core.models import Guest
 class GuestFilter(FilterSet):
     guest = django_filters.CharFilter(method="filter_by_name")
 
-    def filter_by_name(self, queryset, name, value):
-        print("sdfsdfssfs!!!",value)
-        # if value:
-        #     value = value.split(",")
-        #     return queryset.filter(interests__id__in=value).distinct()
-        return queryset
+    def filter_by_name(self, queryset, value):
+        print("sdfsdfssfs!!!", value)
+        return queryset.filter(full_name=value)
 
     class Meta:
         model = Guest

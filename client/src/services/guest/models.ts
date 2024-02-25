@@ -4,12 +4,12 @@ import { baseModelShape } from '../base-model'
 
 export const guestShape = {
   ...baseModelShape,
-  firstName: z.string(),
-  lastName: z.string(),
+  fullName: z.string(),
   attending: z.boolean(),
   dietaryRestrictions: z.string(),
   email: z.string().email(),
   family: z.array(z.string()),
+  events: z.array(z.string()),
 }
 
 export type Guest = GetInferredFromRaw<typeof guestShape>
@@ -19,4 +19,5 @@ export const guestUpdateShape = {
   attending: guestShape.attending,
   dietaryRestrictions: guestShape.dietaryRestrictions,
   email: guestShape.email,
+  events: guestShape.events,
 }
