@@ -18,10 +18,17 @@ const update = createCustomServiceCall(
     return fromApi(res.data)
   },
 )
-const list = createPaginatedServiceCall({
+const findGuest = createPaginatedServiceCall({
   outputShape: guestShape,
   filtersShape: {
     fullName: z.string(),
+  },
+})
+
+const findFamily = createPaginatedServiceCall({
+  outputShape: guestShape,
+  filtersShape: {
+    family: z.string().uuid(),
   },
 })
 export const guestApi = createApi(
@@ -32,5 +39,5 @@ export const guestApi = createApi(
       entity: guestShape,
     },
   },
-  { update, list },
+  { update, findGuest, findFamily },
 )

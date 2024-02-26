@@ -10,16 +10,6 @@ export default function RSVP() {
   const pagination = new Pagination({ page: 1, size: 25 })
   const [fullName, setFullName] = useState('')
   const navigate = useNavigate()
-  // const { mutate, isLoading } = useMutation({
-  //   mutationFn: guestApi.csc.update,
-
-  //   onSuccess: (data: any) => {
-  //     console.log(data)
-  //   },
-  //   onError: (e: any) => {
-  //     console.log(e)
-  //   },
-  // })
 
   const { data: guest, loading } = useQuery({
     queryKey: ['guests', fullName, pagination],
@@ -27,7 +17,7 @@ export default function RSVP() {
     queryFn: async () => {
       // const guest
 
-      const content = await guestApi.csc.list({
+      const content = await guestApi.csc.findGuest({
         input: { pagination },
         filters: { fullName },
       })

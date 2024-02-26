@@ -212,9 +212,8 @@ class FamilyViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateMo
 
 class GuestViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateModelMixin, UpdateModelMixin, DestroyModelMixin):
     queryset = Guest.objects.all()
-    filter_class = GuestFilter
-
-    filter_fields = ("family", "events")
+    # filter_class = GuestFilter
+    filter_fields = ("family", "events", "full_name")
     serializer_class = GuestSerializer
     
     
