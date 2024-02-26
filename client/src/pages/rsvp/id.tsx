@@ -1,37 +1,23 @@
 import { useNavigate, useLocation, Link } from 'react-router-dom'
-import { Input } from 'src/components/input'
 import { Button } from 'src/components/button'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import moon from 'src/assets/images/moon.png'
 import { Pagination } from '@thinknimble/tn-models'
 import { guestApi } from 'src/services/guest'
 import { useState } from 'react'
-import { Formik, Field, Form, ErrorMessage, FieldArray, FormikHelpers } from 'formik'
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Guest } from 'src/services/guest'
-import { useParams } from 'react-router'
-
+import { RsvpForm } from 'src/components/rsvpForm'
 export const RsvpId = () => {
-  let { currentGuestId } = useParams()
-  console.log(currentGuestId)
-  const navigate = useNavigate()
   const { state } = useLocation()
-  console.log(state)
   const pagination = new Pagination({ page: 1, size: 25 })
   const familyId = state?.family
-  const guest = state
-  const initialValues = {
-    guests: [
-      {
-        fullName: '',
-        email: '',
-        attending: '',
-        dietaryRestrictions: '',
-        events: [],
-      },
-    ],
-  }
+  const [formValues, setFormValues] = useState({
+    fullName: '',
+    email: '',
+    attending: '',
+    dietaryRestrictions: '',
+    events: [],
+  })
+
   const { data: family, loading } = useQuery({
     queryKey: ['guests', familyId, pagination],
     enabled: Boolean(familyId),
@@ -40,12 +26,11 @@ export const RsvpId = () => {
 
       const content = await guestApi.csc.findFamily({
         input: { pagination },
-        filters: { id: familyId },
+        filters: { family: familyId },
       })
       return content
     },
   })
-  console.log(family)
   const { mutate, isLoading } = useMutation({
     mutationFn: guestApi.csc.update,
 
@@ -56,18 +41,7 @@ export const RsvpId = () => {
       console.log(e)
     },
   })
-  function showForms() {
-    return (
-      <div>
-        <p>Name</p>
-        <Input value={state.fullName} />
-        <p>Which events will you be attending?</p>
-        <p>Do you have any dietary restrictions?</p>
-        <Input placeholder="dietary restrictions" />
-        <p></p>
-      </div>
-    )
-  }
+
   return (
     <div className="flex flex-col  justify-center">
       <div className="relative min-h-screen bg-wedding-green">
@@ -91,7 +65,7 @@ export const RsvpId = () => {
                   </Link>
                 )
               })}
-              <form>{showForms()}</form>
+              <RsvpForm guest={state} formValues={formValues} setFormValues={setFormValues} />
             </div>
           </div>
         </main>
