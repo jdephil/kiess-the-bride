@@ -14,8 +14,6 @@ import RSVP from 'src/components/rsvp'
 import Accomodations from 'src/components/accomodations'
 import Transportation from 'src/components/transportation'
 import Schedule from 'src/components/schedule'
-import { guestApi } from 'src/services/guest'
-import { useMutation, useQuery } from '@tanstack/react-query'
 import { Pagination } from '@thinknimble/tn-models'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -57,6 +55,7 @@ export const Details = () => {
       gsap.to('.menu', {
         display: 'block',
         delay: 8,
+        top: '3rem',
       })
       gsap.to('.main', {
         marginTop: 40,

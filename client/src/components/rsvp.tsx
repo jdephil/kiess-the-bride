@@ -4,22 +4,26 @@ import { useMutation, useQuery } from '@tanstack/react-query'
 import { Pagination } from '@thinknimble/tn-models'
 import { Input } from './input'
 import { Button } from './button'
+import { useNavigate } from 'react-router-dom'
+
 export default function RSVP() {
   const pagination = new Pagination({ page: 1, size: 25 })
   const [fullName, setFullName] = useState('')
+  const navigate = useNavigate()
+  // const { mutate, isLoading } = useMutation({
+  //   mutationFn: guestApi.csc.update,
 
-  const { mutate, isLoading } = useMutation({
-    mutationFn: guestApi.csc.update,
-    onSuccess: (data: any) => {
-      console.log(data)
-    },
-    onError: (e: any) => {
-      console.log(e)
-    },
-  })
+  //   onSuccess: (data: any) => {
+  //     console.log(data)
+  //   },
+  //   onError: (e: any) => {
+  //     console.log(e)
+  //   },
+  // })
+
   const { data: guest, loading } = useQuery({
     queryKey: ['guests', fullName, pagination],
-
+    enabled: Boolean(fullName),
     queryFn: async () => {
       // const guest
 
@@ -39,13 +43,15 @@ export default function RSVP() {
   })
 
   console.log(guest)
-
+  function searchName() {
+    navigate('/rsvp', { state: { guest } })
+  }
   return (
     <div id="rsvp" className="my-3  ">
       <div className="font-abel text-3xl">RSVP</div>
-      <form>
+      <form onSubmit={searchName}>
         <Input onChange={(e) => setFullName(e.target.value)} id="firstName" />
-        <Button>Submit</Button>
+        <Button type="submit">Search</Button>
       </form>
     </div>
   )

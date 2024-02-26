@@ -1,3 +1,4 @@
+import json
 import logging
 from typing import Any
 
@@ -6,15 +7,12 @@ from django.conf import settings
 from django.contrib.auth import authenticate
 from django.contrib.auth.tokens import default_token_generator
 from django.db import transaction
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from django.shortcuts import render
 from django.template import TemplateDoesNotExist
-from django.views.decorators.csrf import csrf_exempt
-from django_filters.rest_framework import DjangoFilterBackend
-from drf_yasg import openapi
-from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, mixins, permissions, status, views, viewsets
 from rest_framework.decorators import (
+    action,
     api_view,
     authentication_classes,
     permission_classes,
@@ -204,6 +202,13 @@ class FamilyViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateMo
     queryset = Family.objects.all()
     serializer_class = FamilySerializer
 
+    @action(methods=["GET"], detail=True)
+    def get_whole_family(self, request, *args, **kwargs):
+        family = self.get_object()
+        all_guests = Guest.objects.filter(family=family.id)
+        serializer = GuestSerializer(all_guests, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 class GuestViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateModelMixin, UpdateModelMixin, DestroyModelMixin):
     queryset = Guest.objects.all()
@@ -211,22 +216,11 @@ class GuestViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateMod
 
     filter_fields = ("family", "events")
     serializer_class = GuestSerializer
+    
+    
+
 
 
 class EventViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, CreateModelMixin, UpdateModelMixin, DestroyModelMixin):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-
-
-# get_guest_request_body = openapi.Schema(
-#     type=openapi.TYPE_OBJECT,
-#     properties={
-#         "full_name": openapi.Schema(type=openapi.TYPE_STRING, description="guest full name"),
-#     },
-# )
-
-
-# @api_view(["get"])
-# @permission_classes([permissions.AllowAny])
-# def get_guest(request, *args, **kwargs):
-#     return Guest.objects.filter(full_name=request["full_name"])
