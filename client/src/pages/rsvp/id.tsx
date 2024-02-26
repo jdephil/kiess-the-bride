@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation, Link } from 'react-router-dom'
 import { Input } from 'src/components/input'
 import { Button } from 'src/components/button'
 import { useMutation, useQuery } from '@tanstack/react-query'
@@ -6,12 +6,32 @@ import moon from 'src/assets/images/moon.png'
 import { Pagination } from '@thinknimble/tn-models'
 import { guestApi } from 'src/services/guest'
 import { useState } from 'react'
-export const Rsvp = () => {
+import { Formik, Field, Form, ErrorMessage, FieldArray, FormikHelpers } from 'formik'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Guest } from 'src/services/guest'
+import { useParams } from 'react-router'
+
+export const RsvpId = () => {
+  let { currentGuestId } = useParams()
+  console.log(currentGuestId)
   const navigate = useNavigate()
   const { state } = useLocation()
+  console.log(state)
   const pagination = new Pagination({ page: 1, size: 25 })
-  const familyId = state?.guest.results[0].family
-
+  const familyId = state?.family
+  const guest = state
+  const initialValues = {
+    guests: [
+      {
+        fullName: '',
+        email: '',
+        attending: '',
+        dietaryRestrictions: '',
+        events: [],
+      },
+    ],
+  }
   const { data: family, loading } = useQuery({
     queryKey: ['guests', familyId, pagination],
     enabled: Boolean(familyId),
@@ -37,19 +57,16 @@ export const Rsvp = () => {
     },
   })
   function showForms() {
-    const formMap = family?.results.map((guest: any, index: number) => {
-      return (
-        <div>
-          <p>Name</p>
-          <Input value={guest.fullName} />
-          <p>Which events will you be attending?</p>
-          <p>Do you have any dietary restrictions?</p>
-          <Input placeholder="dietary restrictions" />
-          <p></p>
-        </div>
-      )
-    })
-    return formMap
+    return (
+      <div>
+        <p>Name</p>
+        <Input value={state.fullName} />
+        <p>Which events will you be attending?</p>
+        <p>Do you have any dietary restrictions?</p>
+        <Input placeholder="dietary restrictions" />
+        <p></p>
+      </div>
+    )
   }
   return (
     <div className="flex flex-col  justify-center">
@@ -66,6 +83,14 @@ export const Rsvp = () => {
             </div>
             <div className="mt-20 text-center ">
               <header className="font-abel text-3xl">RSVP</header>
+              <p>Who are you RSVPing for?</p>
+              {family?.results.map((guest, index) => {
+                return (
+                  <Link to={`../rsvp/${guest.id}`} state={guest}>
+                    {guest.fullName}
+                  </Link>
+                )
+              })}
               <form>{showForms()}</form>
             </div>
           </div>
