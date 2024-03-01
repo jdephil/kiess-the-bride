@@ -15,7 +15,7 @@ export const guestShape = {
 export type Guest = GetInferredFromRaw<typeof guestShape>
 
 export const guestUpdateShape = {
-  id: guestShape.id,
+  id: z.string().uuid(),
   attending: guestShape.attending,
   dietaryRestrictions: guestShape.dietaryRestrictions,
   email: guestShape.email,

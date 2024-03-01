@@ -3,9 +3,10 @@ import { Button } from 'src/components/button'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import moon from 'src/assets/images/moon.png'
 import { Pagination } from '@thinknimble/tn-models'
-import { guestApi } from 'src/services/guest'
+import { guestApi, guestShape, guestUpdateShape } from 'src/services/guest'
 import { FormEvent, useState } from 'react'
 import { RsvpForm } from 'src/components/rsvpForm'
+import { Guest } from 'src/services/guest'
 export const Rsvp = () => {
   const { state } = useLocation()
   const pagination = new Pagination({ page: 1, size: 25 })
@@ -13,7 +14,7 @@ export const Rsvp = () => {
   const familyId = state?.guest.results[0].family
 
   const [formValues, setFormValues] = useState({
-    fullName: '',
+    id: currentGuest.id,
     email: '',
     attending: '',
     dietaryRestrictions: '',
@@ -30,17 +31,27 @@ export const Rsvp = () => {
       return content
     },
   })
+  console.log(formValues)
+  let shapes = { inputShape: guestUpdateShape, outputShape: guestShape }
   const { mutate, isLoading } = useMutation({
     mutationFn: guestApi.csc.update,
+    // mutationFn: guestApi.csc.update,
 
-    onSuccess: (data: any) => {
-      console.log(data)
-    },
-    onError: (e: any) => {
-      console.log(e)
-    },
+    // onSuccess: (data: any) => {
+    //   console.log(data)
+    // },
+    // onError: (e: any) => {
+    //   console.log(e)
+    // },
   })
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    mutate(formValues)
+  }
+  function handleSetState(data: any) {
+    setFormValues(data)
+  }
   return (
     <div className="flex flex-col  justify-center">
       <div className="relative min-h-screen bg-wedding-green">
@@ -59,16 +70,19 @@ export const Rsvp = () => {
               <p>Who are you RSVPing for?</p>
               {family?.results.map((guest, index) => {
                 return (
-                  <Link to={`${guest.id}`} state={guest}>
+                  <Link key={index} to={`${guest.id}`} state={guest}>
                     {guest.fullName}
                   </Link>
                 )
               })}
-              <RsvpForm
-                guest={currentGuest}
-                formValues={formValues}
-                setFormValues={setFormValues}
-              />
+              <form onSubmit={handleSubmit}>
+                <RsvpForm
+                  guest={currentGuest}
+                  formValues={formValues}
+                  setFormValues={handleSetState}
+                />
+                <Button type="submit">Submit</Button>
+              </form>
             </div>
           </div>
         </main>

@@ -60,7 +60,7 @@ export const RsvpId = () => {
               <p>Who are you RSVPing for?</p>
               {family?.results.map((guest, index) => {
                 return (
-                  <Link to={`../rsvp/${guest.id}`} state={guest}>
+                  <Link key={index} to={`../rsvp/${guest.id}`} state={guest}>
                     {guest.fullName}
                   </Link>
                 )

@@ -3,6 +3,7 @@ export function RsvpForm(props: any) {
   const handleChange = (event: any) => {
     const { name, value } = event.target
     props.setFormValues({ ...props.formValues, [name]: value })
+    console.log(props.formValues)
   }
   return (
     <div>

@@ -9,8 +9,7 @@ import { z } from 'zod'
 
 const update = createCustomServiceCall(
   {
-    inputShape: guestUpdateShape,
-    outputShape: guestShape,
+    shape: { inputShape: guestUpdateShape, outputShape: guestShape },
   },
   async ({ client, input, utils: { toApi, fromApi } }) => {
     const { id, ...rest } = toApi(input)
