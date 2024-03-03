@@ -45,14 +45,14 @@ export const Stars = () => {
   return (
     <div>
       <div className="fixed left-0 ">
-        <img className="star1 ml-36 mt-28 w-6 opacity-80" src={star2} />
+        <img className="star1 ml-36 mt-56 w-6 opacity-80" src={star2} />
         <img className="star1 ml-56 mt-8 w-6 opacity-50" src={star3} />
         <img className="star1 ml-12 mt-4 w-6 opacity-70" src={star1} />
         <img className="star1 ml-72 mt-4 w-6 opacity-60" src={star3} />
       </div>
       <div className="fixed left-0 z-20">
         {/* <img className=" mt-12 w-96" src={starsRight} /> */}
-        <img className="star1 ml-[25rem] mt-36 w-6 opacity-60" src={star1} />
+        <img className="star1 ml-[25rem] mt-64 w-6 opacity-60" src={star1} />
         <img className="star1 ml-[34rem] mt-0 w-6 opacity-40" src={star3} />
         <img className="star1 ml-[29rem] mt-6 w-6 opacity-80" src={star2} />
         <img className="star1 ml-[38rem] mt-0 w-6 opacity-40" src={star1} />

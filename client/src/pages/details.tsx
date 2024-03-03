@@ -34,7 +34,7 @@ export const Details = () => {
       }) // <-- automatically reverted
       gsap.to('.menu', {
         display: 'block',
-        delay: 8,
+        delay: 5,
         top: '3rem',
       })
       // gsap.to('.main', {
@@ -75,7 +75,7 @@ export const Details = () => {
   return (
     <div ref={container} className="flex min-h-screen flex-col justify-center">
       <div className="relative h-screen overflow-scroll bg-wedding-green">
-        <div className="text-center text-white">
+        <div className="absolute left-[40%] top-5 text-center text-white">
           <p className="mb-5 mt-5 font-abel text-6xl">Chris & Jen</p>
           <p>Meet us in the mountains</p>
         </div>
@@ -97,7 +97,7 @@ export const Details = () => {
           <div className="row-span1 fixed bottom-5 left-[26rem] z-10 ">
             <img className="mb-5 mr-5 w-[22rem]" src={forestRight} />
           </div>
-          <div className="content col-start-2 row-span-2  min-w-0">
+          <div className="content col-start-2 row-span-2 mt-5  min-w-0">
             <div className="text-center text-white">
               {/* <p className="mb-5 font-abel text-6xl">Chris & Jen</p>
               <p>Meet us in the mountains</p> */}
