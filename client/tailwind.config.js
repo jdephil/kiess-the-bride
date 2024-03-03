@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       colors: {
         'wedding-yellow': '#F0ECC0',
-        'wedding-green': '#31413d',
+        'wedding-green': '#31413e',
         'wedding-purple': '#897994',
       },
       fontFamily: {
@@ -18,13 +18,16 @@ module.exports = {
       },
       spacing: {
         enter: '48%',
-        moon: '43%',
+        moon: '28%',
       },
       width: {
         large: '28rem',
       },
       gridTemplateRows: {
         detailsMain: 'minmax(0, 1fr) 275px',
+      },
+      gridTemplateColumns: {
+        detailsMain: '50rem 1fr',
       },
     },
   },
