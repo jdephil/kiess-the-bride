@@ -12,13 +12,13 @@ export const Rsvp = () => {
   const pagination = new Pagination({ page: 1, size: 25 })
   const currentGuest = state?.guest.results[0]
   const familyId = state?.guest.results[0].family
-
+  console.log(currentGuest)
   const [formValues, setFormValues] = useState({
     id: currentGuest.id,
     email: '',
-    attending: '',
+    attending: false,
     dietaryRestrictions: '',
-    events: [],
+    events: [''],
   })
   const { data: family, loading } = useQuery({
     queryKey: ['guests', familyId, pagination],
@@ -32,21 +32,22 @@ export const Rsvp = () => {
     },
   })
   console.log(formValues)
-  let shapes = { inputShape: guestUpdateShape, outputShape: guestShape }
+
   const { mutate, isLoading } = useMutation({
     mutationFn: guestApi.csc.update,
-    // mutationFn: guestApi.csc.update,
 
-    // onSuccess: (data: any) => {
-    //   console.log(data)
-    // },
-    // onError: (e: any) => {
-    //   console.log(e)
-    // },
+    onSuccess: (data: any) => {
+      console.log(data)
+    },
+    onError: (e: any) => {
+      console.log(e)
+    },
   })
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log('inside handle', formValues)
+    formValues.id = currentGuest.id
     mutate(formValues)
   }
   function handleSetState(data: any) {

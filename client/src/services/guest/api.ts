@@ -9,12 +9,12 @@ import { z } from 'zod'
 
 const update = createCustomServiceCall(
   {
-    shape: { inputShape: guestUpdateShape, outputShape: guestShape },
+    inputShape: guestUpdateShape,
   },
-  async ({ client, input, utils: { toApi, fromApi } }) => {
+  async ({ client, input, utils: { toApi } }) => {
     const { id, ...rest } = toApi(input)
     const res = await client.patch(`/guests/${id}/`, rest)
-    return fromApi(res.data)
+    return res.data
   },
 )
 const findGuest = createPaginatedServiceCall({
