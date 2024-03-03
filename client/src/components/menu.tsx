@@ -30,7 +30,7 @@ export default function MyMenu() {
                 {({ active }) => (
                   <HashLink
                     smooth
-                    to="/details#schedule"
+                    to="/home#schedule"
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
@@ -43,7 +43,7 @@ export default function MyMenu() {
                 {({ active }) => (
                   <HashLink
                     smooth
-                    to="/details#rsvp"
+                    to="/home#rsvp"
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
@@ -58,7 +58,7 @@ export default function MyMenu() {
                 {({ active }) => (
                   <HashLink
                     smooth
-                    to="/details#accomodations"
+                    to="/home#accomodations"
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
@@ -71,7 +71,7 @@ export default function MyMenu() {
                 {({ active }) => (
                   <HashLink
                     smooth
-                    to="/details#transportation"
+                    to="/home#transportation"
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
@@ -89,7 +89,7 @@ export default function MyMenu() {
                     className={`${
                       active ? 'bg-wedding-purple text-white' : 'text-wedding-yellow'
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                    to="/details#registry"
+                    to="/home#registry"
                   >
                     Registry
                   </HashLink>

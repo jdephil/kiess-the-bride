@@ -8,22 +8,54 @@ import star2 from 'src/assets/images/star_2.png'
 import star3 from 'src/assets/images/star_3.png'
 
 export const Stars = () => {
-  const container = useRef<HTMLDivElement>(null)
+  const stars = useRef<HTMLDivElement>(null)
+  useGSAP(() => {
+    // const el = registry.current
+    // gsap code here...
 
+    // gsap.to('.main', {
+    //   marginTop: 40,
+    //   delay: 5,
+    //   duration: 3,
+    // })
+    gsap.to('.star1', {
+      scale: '1.25',
+      repeat: -1,
+      duration: 1,
+      yoyo: true,
+      ease: 'power1.inOut',
+      opacity: 1,
+      // startAt: {
+      //   opacity: '50%',
+      // },
+      stagger: { each: 0.5, from: 'random' },
+    })
+    gsap.to('.content', {
+      overflowY: 'scroll',
+      delay: 5,
+    })
+
+    // gsap.to('.lake', {
+    //   scrollTrigger: { trigger: el }, // start the animation when ".box" enters the viewport (once)
+    //   x: 500,
+    //   display: 'block',
+    //   position: 'absolute',
+    // })
+  }) // <-- scope is for selector text (optional)
   return (
     <div>
       <div className="fixed left-0 ">
-        <img className="ml-36 mt-28 w-6" src={star2} />
-        <img className="ml-56 mt-8 w-6" src={star3} />
-        <img className="ml-12 mt-4 w-6" src={star1} />
-        <img className="ml-72 mt-4 w-6" src={star3} />
+        <img className="star1 ml-36 mt-28 w-6 opacity-80" src={star2} />
+        <img className="star1 ml-56 mt-8 w-6 opacity-50" src={star3} />
+        <img className="star1 ml-12 mt-4 w-6 opacity-70" src={star1} />
+        <img className="star1 ml-72 mt-4 w-6 opacity-60" src={star3} />
       </div>
       <div className="fixed left-0 z-20">
         {/* <img className=" mt-12 w-96" src={starsRight} /> */}
-        <img className="ml-[25rem] mt-36 w-6" src={star1} />
-        <img className="ml-[34rem] mt-0 w-6" src={star3} />
-        <img className="ml-[29rem] mt-6 w-6" src={star2} />
-        <img className="ml-[38rem] mt-0 w-6" src={star1} />
+        <img className="star1 ml-[25rem] mt-36 w-6 opacity-60" src={star1} />
+        <img className="star1 ml-[34rem] mt-0 w-6 opacity-40" src={star3} />
+        <img className="star1 ml-[29rem] mt-6 w-6 opacity-80" src={star2} />
+        <img className="star1 ml-[38rem] mt-0 w-6 opacity-40" src={star1} />
       </div>
     </div>
   )
