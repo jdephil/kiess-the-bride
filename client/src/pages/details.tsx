@@ -84,20 +84,14 @@ export const Details = () => {
           <img className="mb-5 mr-5 w-[22rem]" src={forestRight} />
         </div>
       </div>
-      <div className="main  grid-cols-detailsMain mb-5 grid bg-wedding-green font-dmSans text-white">
-        <div className="content col-start-2 mt-5  min-w-0">
-          <div className="text-center text-white">
-            {/* <p className="mb-5 font-abel text-6xl">Chris & Jen</p>
-              <p>Meet us in the mountains</p> */}
-            <div className="details">
-              <Schedule />
-              <RSVP />
-              <Accomodations />
-              <Transportation />
-              <div ref={registry} id="registry" className="reg">
-                <Registry />
-              </div>
-            </div>
+      <div className="main mb-5 mt-5 flex justify-end bg-wedding-green text-center font-dmSans text-white">
+        <div className="details mr-5 w-[500px]">
+          <Schedule />
+          <RSVP />
+          <Accomodations />
+          <Transportation />
+          <div ref={registry} id="registry" className="reg">
+            <Registry />
           </div>
         </div>
       </div>
