@@ -28,7 +28,7 @@ export const Details = () => {
   const accomodations = useRef<HTMLDivElement>(null)
   const rsvp = useRef<HTMLDivElement>(null)
   const transportation = useRef<HTMLDivElement>(null)
-
+  const faq = useRef<HTMLDivElement>(null)
   useGSAP(
     () => {
       gsap.to('.moon', {
@@ -55,6 +55,7 @@ export const Details = () => {
     const accomodationsRef = accomodations.current
     const rsvpRef = rsvp.current
     const transportaionRef = transportation.current
+    const faqRef = faq.current
 
     gsap.to('.cabin', {
       opacity: 1,
@@ -71,13 +72,13 @@ export const Details = () => {
     gsap.to('.firepit', {
       opacity: 1,
       scrollTrigger: {
-        trigger: registryRef,
+        trigger: transportaionRef,
       },
     })
     gsap.to('.lightbulbs', {
       opacity: 1,
       scrollTrigger: {
-        trigger: transportaionRef,
+        trigger: faqRef,
       },
     })
   }, [])
@@ -130,7 +131,7 @@ export const Details = () => {
           <div ref={accomodations}>
             <Accomodations />
           </div>
-          <div>
+          <div ref={faq}>
             <FAQ />
           </div>
           <div ref={transportation}>
