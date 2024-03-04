@@ -27,7 +27,6 @@ export const Details = () => {
       gsap.to('.moon', {
         marginLeft: 20,
         duration: 3,
-        position: 'fixed',
         top: 5,
         delay: 2,
         width: '7rem',
@@ -42,7 +41,7 @@ export const Details = () => {
         duration: 2,
       })
       gsap.to('.content', {
-        overflowY: 'scroll',
+        // overflowY: 'scroll',
         delay: 5,
       })
     },
@@ -52,7 +51,8 @@ export const Details = () => {
     const el = registry.current
     gsap.to(el, {
       backgroundColor: 'red',
-      duration: 1,
+      opacity: 0,
+      duration: 5,
       scrollTrigger: {
         trigger: el,
         // markers: true,
@@ -60,20 +60,20 @@ export const Details = () => {
     })
   }, [])
   return (
-    <div ref={container} className="flex min-h-screen flex-col justify-center">
-      <div className="relative h-screen overflow-scroll bg-wedding-green">
-        <div className="absolute left-[40%] top-5 text-center text-white">
+    <div ref={container} className="flex flex-col justify-center bg-wedding-green">
+      <div className=" bg-wedding-green">
+        <div className="fixed left-[40%] top-5 text-center text-white">
           <p className="mb-5 mt-5 font-abel text-6xl">Chris & Jen</p>
           <p>Meet us in the mountains</p>
         </div>
         <div className="moon fixed top-44 z-30 ml-[18rem] ">
           <img className="w-32" src={moon} />
-          <div className="menu z-20 hidden">
+          <div className="menu z-20 block">
             <MyMenu />
           </div>
         </div>
         <Stars />
-        <main className="main grid-rows-detailsMain grid-cols-detailsMain mb-5 grid  h-screen font-dmSans text-white">
+        <main className="main grid-rows-detailsMain grid-cols-detailsMain mb-5 grid min-h-screen  bg-wedding-green font-dmSans text-white">
           <div className="fixed bottom-5 z-10 row-span-2">
             <img className="mb-5 ml-5 w-[22rem] " src={forestLeft} />
           </div>
