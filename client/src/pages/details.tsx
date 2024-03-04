@@ -60,7 +60,7 @@ export const Details = () => {
     })
   }, [])
   return (
-    <div ref={container} className="flex w-full flex-col justify-center bg-wedding-green">
+    <div ref={container} className="justify-center bg-wedding-green">
       <div className="fixed left-[40%] top-5 text-center text-white">
         <p className="mb-5 mt-5 font-abel text-6xl">Chris & Jen</p>
         <p>Meet us in the mountains</p>
@@ -71,20 +71,20 @@ export const Details = () => {
           <MyMenu />
         </div>
       </div>
-      <div className="bg-wedding-green">
-        <Stars />
-        <div className="fixed bottom-5 z-10 row-span-2">
-          <img className="mb-5 ml-5 w-[22rem] " src={forestLeft} />
-        </div>
-        <div className="lake fixed bottom-24 left-48">
-          <img className="w-96" src={nightLake} />
-        </div>
 
-        <div className="row-span1 fixed bottom-5 left-[26rem] z-10 ">
-          <img className="mb-5 mr-5 w-[22rem]" src={forestRight} />
-        </div>
+      <Stars />
+      <div className="fixed bottom-5 z-10 row-span-2">
+        <img className="mb-5 ml-5 w-[22rem] " src={forestLeft} />
       </div>
-      <div className="main mb-5 mt-5 flex justify-end bg-wedding-green text-center font-dmSans text-white">
+      <div className="lake fixed bottom-24 left-48">
+        <img className="w-96" src={nightLake} />
+      </div>
+
+      <div className="row-span1 fixed bottom-5 left-[26rem] z-10 ">
+        <img className="mb-5 mr-5 w-[22rem]" src={forestRight} />
+      </div>
+
+      <div className="main flex justify-end bg-wedding-green text-center font-dmSans text-white">
         <div className="details mr-5 w-[500px]">
           <Schedule />
           <RSVP />
