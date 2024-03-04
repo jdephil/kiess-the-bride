@@ -14,23 +14,29 @@ import RSVP from 'src/components/rsvp'
 import Accomodations from 'src/components/accomodations'
 import Transportation from 'src/components/transportation'
 import Schedule from 'src/components/schedule'
+import leftCabin from 'src/assets/images/left_cabin.png'
+import rightCabin from 'src/assets/images/right_cabin.png'
+import bear from 'src/assets/images/bear.png'
+import firepit from 'src/assets/images/firepit.png'
+import lightbulbs from 'src/assets/images/lightbulbs.png'
 
 gsap.registerPlugin(ScrollTrigger)
 export const Details = () => {
   const container = useRef<HTMLDivElement>(null)
   const registry = useRef<HTMLDivElement>(null)
+  const accomodations = useRef<HTMLDivElement>(null)
+  const rsvp = useRef<HTMLDivElement>(null)
+  const transportation = useRef<HTMLDivElement>(null)
 
   useGSAP(
     () => {
-      // const el = registry.current
-      // gsap code here...
       gsap.to('.moon', {
         marginLeft: 20,
         duration: 3,
         top: 5,
         delay: 2,
         width: '7rem',
-      }) // <-- automatically reverted
+      })
       gsap.to('.menu', {
         display: 'block',
         delay: 5,
@@ -40,22 +46,37 @@ export const Details = () => {
         opacity: 0,
         duration: 2,
       })
-      gsap.to('.content', {
-        // overflowY: 'scroll',
-        delay: 5,
-      })
     },
     { scope: container },
   ) // <-- scope is for selector text (optional)
   useEffect(() => {
-    const el = registry.current
-    gsap.to(el, {
-      backgroundColor: 'red',
-      opacity: 0,
-      duration: 2,
+    const registryRef = registry.current
+    const accomodationsRef = accomodations.current
+    const rsvpRef = rsvp.current
+    const transportaionRef = transportation.current
+
+    gsap.to('.cabin', {
+      opacity: 1,
       scrollTrigger: {
-        trigger: el,
-        // markers: true,
+        trigger: accomodationsRef,
+      },
+    })
+    gsap.to('.bear', {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: rsvpRef,
+      },
+    })
+    gsap.to('.firepit', {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: registryRef,
+      },
+    })
+    gsap.to('.lightbulbs', {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: transportaionRef,
       },
     })
   }, [])
@@ -76,8 +97,23 @@ export const Details = () => {
       <div className="fixed bottom-5 z-10 row-span-2">
         <img className="mb-5 ml-5 w-[22rem] " src={forestLeft} />
       </div>
+      <div className="lightbulbs fixed bottom-56 left-20 z-20 opacity-0">
+        <img className="w-[650px]" src={lightbulbs} />
+      </div>
+      <div className="cabin fixed bottom-40 left-24 opacity-0">
+        <img className="w-28" src={leftCabin} />
+      </div>
       <div className="lake fixed bottom-24 left-48">
         <img className="w-96" src={nightLake} />
+      </div>
+      <div className="cabin fixed bottom-52 left-[37rem] opacity-0">
+        <img className="w-16" src={rightCabin} />
+      </div>
+      <div className="bear fixed bottom-32 left-[31rem] z-20 opacity-0">
+        <img className="w-14" src={bear} />
+      </div>
+      <div className="firepit fixed bottom-16 left-[29rem] opacity-0">
+        <img className="w-16" src={firepit} />
       </div>
 
       <div className="row-span1 fixed bottom-5 left-[26rem] z-10 ">
@@ -87,9 +123,15 @@ export const Details = () => {
       <div className="main flex justify-end bg-wedding-green text-center font-dmSans text-white">
         <div className="details mr-5 w-[500px]">
           <Schedule />
-          <RSVP />
-          <Accomodations />
-          <Transportation />
+          <div ref={rsvp}>
+            <RSVP />
+          </div>
+          <div ref={accomodations}>
+            <Accomodations />
+          </div>
+          <div ref={transportation}>
+            <Transportation />
+          </div>
           <div ref={registry} id="registry" className="reg">
             <Registry />
           </div>
