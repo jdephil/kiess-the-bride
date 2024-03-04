@@ -52,7 +52,7 @@ export const Details = () => {
     gsap.to(el, {
       backgroundColor: 'red',
       opacity: 0,
-      duration: 5,
+      duration: 2,
       scrollTrigger: {
         trigger: el,
         // markers: true,
@@ -61,46 +61,46 @@ export const Details = () => {
   }, [])
   return (
     <div ref={container} className="flex flex-col justify-center bg-wedding-green">
-      <div className=" bg-wedding-green">
-        <div className="fixed left-[40%] top-5 text-center text-white">
-          <p className="mb-5 mt-5 font-abel text-6xl">Chris & Jen</p>
-          <p>Meet us in the mountains</p>
+      <div className="fixed left-[40%] top-5 text-center text-white">
+        <p className="mb-5 mt-5 font-abel text-6xl">Chris & Jen</p>
+        <p>Meet us in the mountains</p>
+      </div>
+      <div className="moon fixed top-44 z-30 ml-[18rem] ">
+        <img className="w-32" src={moon} />
+        <div className="menu z-20 hidden">
+          <MyMenu />
         </div>
-        <div className="moon fixed top-44 z-30 ml-[18rem] ">
-          <img className="w-32" src={moon} />
-          <div className="menu z-20 block">
-            <MyMenu />
-          </div>
-        </div>
+      </div>
+      <div className="bg-wedding-green">
         <Stars />
-        <main className="main grid-rows-detailsMain grid-cols-detailsMain mb-5 grid min-h-screen  bg-wedding-green font-dmSans text-white">
-          <div className="fixed bottom-5 z-10 row-span-2">
-            <img className="mb-5 ml-5 w-[22rem] " src={forestLeft} />
-          </div>
-          <div className="lake fixed bottom-24 left-48">
-            <img className="w-96" src={nightLake} />
-          </div>
+        <div className="fixed bottom-5 z-10 row-span-2">
+          <img className="mb-5 ml-5 w-[22rem] " src={forestLeft} />
+        </div>
+        <div className="lake fixed bottom-24 left-48">
+          <img className="w-96" src={nightLake} />
+        </div>
 
-          <div className="row-span1 fixed bottom-5 left-[26rem] z-10 ">
-            <img className="mb-5 mr-5 w-[22rem]" src={forestRight} />
-          </div>
-          <div className="content col-start-2 row-span-2 mt-5  min-w-0">
-            <div className="text-center text-white">
-              {/* <p className="mb-5 font-abel text-6xl">Chris & Jen</p>
+        <div className="row-span1 fixed bottom-5 left-[26rem] z-10 ">
+          <img className="mb-5 mr-5 w-[22rem]" src={forestRight} />
+        </div>
+      </div>
+      <main className="main grid-rows-detailsMain grid-cols-detailsMain mb-5 grid bg-wedding-green font-dmSans text-white">
+        <div className="content col-start-2 row-span-2 mt-5  min-w-0">
+          <div className="text-center text-white">
+            {/* <p className="mb-5 font-abel text-6xl">Chris & Jen</p>
               <p>Meet us in the mountains</p> */}
-              <div className="details">
-                <Schedule />
-                <RSVP />
-                <Accomodations />
-                <Transportation />
-                <div ref={registry} id="registry" className="reg">
-                  <Registry />
-                </div>
+            <div className="details">
+              <Schedule />
+              <RSVP />
+              <Accomodations />
+              <Transportation />
+              <div ref={registry} id="registry" className="reg">
+                <Registry />
               </div>
             </div>
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
   )
 }
