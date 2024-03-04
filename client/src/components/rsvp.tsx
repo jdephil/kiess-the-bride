@@ -37,7 +37,7 @@ export default function RSVP() {
     navigate('/rsvp', { state: { guest } })
   }
   return (
-    <div id="rsvp" className="my-3  ">
+    <div id="rsvp" className="pt-36">
       <div className="font-abel text-3xl">RSVP</div>
       <form onSubmit={searchName}>
         <Input onChange={(e) => setFullName(e.target.value)} id="firstName" />
