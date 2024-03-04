@@ -87,7 +87,7 @@ class Family(AbstractBaseModel):
 class Event(AbstractBaseModel):
     name = models.CharField(blank=True, max_length=255)
 
-    def __str__(self):  
+    def __str__(self):
         return self.name
 
 

@@ -79,7 +79,10 @@ class FamilySerializer(serializers.ModelSerializer):
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = ("id", "name",)
+        fields = (
+            "id",
+            "name",
+        )
 
 
 class GuestSerializer(serializers.ModelSerializer):
