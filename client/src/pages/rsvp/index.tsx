@@ -67,7 +67,7 @@ export const Rsvp = () => {
               <p>Meet us in the mountains</p>
             </div>
             <div className="mt-20 text-center ">
-              <header className="font-abel text-3xl">RSVP</header>
+              <header className="font-abel  text-4xl">RSVP</header>
               <p>Who are you RSVPing for?</p>
               {family?.results.map((guest, index) => {
                 return (

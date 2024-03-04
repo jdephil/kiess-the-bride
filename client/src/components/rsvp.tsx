@@ -38,7 +38,7 @@ export default function RSVP() {
   }
   return (
     <div id="rsvp" className="pt-36">
-      <div className="font-abel text-3xl">RSVP</div>
+      <div className="font-abel  text-4xl">RSVP</div>
       <form onSubmit={searchName}>
         <Input onChange={(e) => setFullName(e.target.value)} id="firstName" />
         <Button type="submit">Search</Button>

@@ -121,7 +121,7 @@ export const Details = () => {
       </div>
 
       <div className="main flex justify-end bg-wedding-green text-center font-dmSans text-white">
-        <div className="details mr-5 w-[500px]">
+        <div className="details mr-5 w-[600px]">
           <Schedule />
           <div ref={rsvp}>
             <RSVP />
