@@ -9,7 +9,7 @@ function LogInInner() {
   const navigate = useNavigate()
 
   return (
-    <main className="flex h-screen flex-col items-center justify-center gap-3 bg-slate-800">
+    <main className="flex  flex-col items-center justify-center gap-3 bg-slate-800">
       <header className="text-2xl text-white">Welcome</header>
       <div className="flex flex-col gap-3">
         <button onClick={() => navigate('/home')} className="text-white">

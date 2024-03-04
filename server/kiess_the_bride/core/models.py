@@ -1,5 +1,6 @@
 import logging
 
+import django.db.models.deletion
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.contrib.auth.tokens import default_token_generator
@@ -74,3 +75,29 @@ class User(AbstractUser, AbstractBaseModel):
 
     class Meta:
         ordering = ["email"]
+
+
+class Family(AbstractBaseModel):
+    last_name = models.CharField(blank=True, max_length=255)
+
+    def __str__(self):
+        return self.last_name
+
+
+class Event(AbstractBaseModel):
+    name = models.CharField(blank=True, max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+class Guest(AbstractBaseModel):
+    full_name = models.CharField(blank=True, max_length=255)
+    attending = models.BooleanField(default=False)
+    dietary_restrictions = models.TextField(blank=True)
+    email = models.CharField(blank=True, max_length=255)
+    family = models.ForeignKey(Family, on_delete=django.db.models.deletion.CASCADE)
+    events = models.ManyToManyField("Event", related_name="guest", blank=True)
+
+    def __str__(self):
+        return self.full_name

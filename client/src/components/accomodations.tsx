@@ -2,7 +2,7 @@ import ExportLink from './locationLink'
 
 export default function Accomodations() {
   return (
-    <div id="accomodations" className="my-3  ">
+    <div id="accomodations" className="my-3 pt-36 ">
       <div className="mb-7 text-center font-abel text-3xl tracking-wide ">Accommodations</div>
       <div className="mt-2 ">
         <div className="mt-5 ">

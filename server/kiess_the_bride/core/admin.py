@@ -3,9 +3,12 @@ from django.contrib.auth.admin import GroupAdmin, UserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django.contrib.auth.models import Group, Permission
 
-from kiess_the_bride.common.admin.filters import AutocompleteAdminMedia, AutocompleteFilter
+from kiess_the_bride.common.admin.filters import (
+    AutocompleteAdminMedia,
+    AutocompleteFilter,
+)
 
-from .models import User
+from .models import Event, Family, Guest, User
 
 
 class CustomUserAdmin(UserAdmin):
@@ -73,9 +76,21 @@ class PermissionAdmin(admin.ModelAdmin):
     search_fields = ("name", "content_type__app_label", "content_type__model", "codename")
 
 
+@admin.register(Event)
+class CustomEventAdmin(admin.ModelAdmin):
+    search_fields = ("name",)
+
+
+@admin.register(Guest)
+class CustomGuestAdmin(admin.ModelAdmin):
+    search_fields = ("full_name",)
+    autocomplete_fields = ("events",)
+
+
 admin.site.register(User, CustomUserAdmin)
 
 # Since Django's contrib apps already register Group to the admin site, we need to remove it and add it again
 # but with our custom admin class.
 admin.site.unregister(Group)
 admin.site.register(Group, CustomGroupAdmin)
+admin.site.register(Family)

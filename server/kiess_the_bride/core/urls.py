@@ -10,6 +10,8 @@ if settings.DEBUG:
     router = routers.DefaultRouter()
 
 router.register("users", core_views.UserViewSet)
+router.register("familys", core_views.FamilyViewSet)
+router.register("guests", core_views.GuestViewSet)
 
 urlpatterns = [
     path("api/", include(router.urls)),
