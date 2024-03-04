@@ -19,6 +19,7 @@ import rightCabin from 'src/assets/images/right_cabin.png'
 import bear from 'src/assets/images/bear.png'
 import firepit from 'src/assets/images/firepit.png'
 import lightbulbs from 'src/assets/images/lightbulbs.png'
+import FAQ from 'src/components/faq'
 
 gsap.registerPlugin(ScrollTrigger)
 export const Details = () => {
@@ -121,13 +122,16 @@ export const Details = () => {
       </div>
 
       <div className="main flex justify-end bg-wedding-green text-center font-dmSans text-white">
-        <div className="details mr-5 w-[600px]">
+        <div className="details mr-5 w-[550px]">
           <Schedule />
           <div ref={rsvp}>
             <RSVP />
           </div>
           <div ref={accomodations}>
             <Accomodations />
+          </div>
+          <div>
+            <FAQ />
           </div>
           <div ref={transportation}>
             <Transportation />
