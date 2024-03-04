@@ -3,10 +3,10 @@ import ExportLink from './locationLink'
 export default function Accomodations() {
   return (
     <div id="accomodations" className="my-3 pt-36 ">
-      <div className="mb-7 text-center font-abel text-3xl tracking-wide ">Accommodations</div>
+      <div className="mb-7 text-center font-abel  text-4xl tracking-wide ">Accommodations</div>
       <div className="mt-2 ">
         <div className="mt-5 ">
-          <p className="m-auto w-[70%] border-b-2 pb-2 text-xl text-wedding-yellow">
+          <p className="m-auto w-[70%] border-b-2 pb-2   text-2xl text-wedding-yellow">
             Blue Moon Rising Cabins
           </p>
           <p className="my-5">Stay onsite with Chris & Jen!</p>
@@ -28,7 +28,7 @@ export default function Accomodations() {
           />
         </div>
         <div className="mt-2 ">
-          <p className="m-auto w-[70%] border-b-2 pb-2 text-xl text-wedding-yellow">
+          <p className="m-auto w-[70%] border-b-2 pb-2   text-2xl text-wedding-yellow">
             The Suites at Silver Tree
           </p>
           <p className="my-5">Room block with studio, 1 & 2 bedrooms</p>
@@ -45,7 +45,7 @@ export default function Accomodations() {
           />
         </div>
         <div className="mt-2 ">
-          <p className="m-auto w-[70%] border-b-2 pb-2 text-xl text-wedding-yellow">
+          <p className="m-auto w-[70%] border-b-2 pb-2   text-2xl text-wedding-yellow">
             Other Options
           </p>
           <p className="mt-5">Inn at Deep Creek</p>

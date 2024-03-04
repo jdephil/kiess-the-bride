@@ -3,13 +3,15 @@ import ExportLink from './locationLink'
 export default function Schedule() {
   return (
     <div id="schedule" className="pt-36 text-center">
-      <div className="text-center font-abel text-3xl tracking-wide">Schedule</div>
+      <div className="text-center font-abel text-4xl  font-bold tracking-wide">Schedule</div>
 
-      <div className="my-2 ">
-        <p className="m-auto w-[70%] border-b-2 pb-2 text-xl">Thursday June 6, 2024</p>
+      <div className="mt-10 ">
+        <p className="m-auto w-[70%] border-b-2 pb-2   text-xl">Thursday June 6, 2024</p>
 
-        <p className="my-7  text-lg font-bold tracking-widest text-wedding-yellow">Welcome Party</p>
-        <p>6:00 PM to 9:30 PM</p>
+        <p className="my-7  text-2xl font-bold tracking-widest text-wedding-yellow">
+          Welcome Party
+        </p>
+        <p className="tracking-wide">6:00 PM to 9:30 PM</p>
         <p>Dutch&apos;s at Silver Tree</p>
         <p>Patio Bar</p>
 
@@ -19,9 +21,9 @@ export default function Schedule() {
           cityStateZip={'Oakland, MD 21550'}
         />
       </div>
-      <div className=" mt-7">
-        <p className="m-auto w-[70%] border-b-2 pb-2 text-xl">Friday June 7, 2024</p>
-        <p className="my-7  text-lg font-bold tracking-widest text-wedding-yellow">
+      <div className="mt-16">
+        <p className="m-auto w-[70%] border-b-2 pb-2   text-xl">Friday June 7, 2024</p>
+        <p className="my-7  text-2xl font-bold tracking-widest text-wedding-yellow">
           Rehersal Drinks
         </p>
         <p>7:00 PM to 9:00 PM</p>
@@ -32,9 +34,9 @@ export default function Schedule() {
           cityStateZip={'McHenry, MD 21541'}
         />
       </div>
-      <div className="mt-7 ">
-        <p className="m-auto w-[70%] border-b-2 pb-2 text-xl">Saturday June 8, 2024</p>
-        <p className="my-7  text-lg font-bold tracking-widest text-wedding-yellow">
+      <div className="mt-16 ">
+        <p className="m-auto w-[70%] border-b-2 pb-2   text-xl">Saturday June 8, 2024</p>
+        <p className="my-7  text-2xl font-bold tracking-widest text-wedding-yellow">
           Ceremony & Reception
         </p>
         <p>5:30 PM</p>
