@@ -55,7 +55,7 @@ export const Rsvp = () => {
   }
   return (
     <div className="flex flex-col  justify-center">
-      <div className="relative min-h-screen bg-wedding-green">
+      <div className="relative bg-wedding-green">
         <div className="fixed top-5 z-10 ml-10 flex w-28">
           <img className="w-36" src={moon} />
           <Button extendClassName="h-10 self-center align-center">Back</Button>
