@@ -37,27 +37,14 @@ export const Details = () => {
         delay: 5,
         top: '3rem',
       })
-      // gsap.to('.main', {
-      //   marginTop: 40,
-      //   delay: 5,
-      //   duration: 3,
-      // })
       gsap.from('.details', {
         opacity: 0,
-        delay: 5,
         duration: 2,
       })
       gsap.to('.content', {
         overflowY: 'scroll',
         delay: 5,
       })
-
-      // gsap.to('.lake', {
-      //   scrollTrigger: { trigger: el }, // start the animation when ".box" enters the viewport (once)
-      //   x: 500,
-      //   display: 'block',
-      //   position: 'absolute',
-      // })
     },
     { scope: container },
   ) // <-- scope is for selector text (optional)
