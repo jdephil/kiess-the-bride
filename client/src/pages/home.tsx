@@ -11,7 +11,7 @@ export const Home = () => {
   }
 
   return (
-    <div className="align-center grid grid-cols-12 justify-center bg-wedding-yellow">
+    <div className="align-center grid h-screen grid-cols-12 justify-center bg-wedding-yellow">
       <div className="container col-start-2 col-end-12">
         <p
           onClick={() => {
