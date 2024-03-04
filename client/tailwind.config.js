@@ -29,6 +29,9 @@ module.exports = {
       gridTemplateColumns: {
         detailsMain: '50rem 1fr',
       },
+      boxShadow: {
+        stars: 'inset 0px 0px 46px 21px rgba(240,236,192,1);',
+      },
     },
   },
   plugins: [],
