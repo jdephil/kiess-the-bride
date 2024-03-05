@@ -19,6 +19,7 @@ import rightCabin from 'src/assets/images/right_cabin.png'
 import bear from 'src/assets/images/bear.png'
 import firepit from 'src/assets/images/firepit.png'
 import lightbulbs from 'src/assets/images/lightbulbs.png'
+import FAQ from 'src/components/faq'
 
 gsap.registerPlugin(ScrollTrigger)
 export const Details = () => {
@@ -27,7 +28,7 @@ export const Details = () => {
   const accomodations = useRef<HTMLDivElement>(null)
   const rsvp = useRef<HTMLDivElement>(null)
   const transportation = useRef<HTMLDivElement>(null)
-
+  const faq = useRef<HTMLDivElement>(null)
   useGSAP(
     () => {
       gsap.to('.moon', {
@@ -54,6 +55,7 @@ export const Details = () => {
     const accomodationsRef = accomodations.current
     const rsvpRef = rsvp.current
     const transportaionRef = transportation.current
+    const faqRef = faq.current
 
     gsap.to('.cabin', {
       opacity: 1,
@@ -70,13 +72,13 @@ export const Details = () => {
     gsap.to('.firepit', {
       opacity: 1,
       scrollTrigger: {
-        trigger: registryRef,
+        trigger: transportaionRef,
       },
     })
     gsap.to('.lightbulbs', {
       opacity: 1,
       scrollTrigger: {
-        trigger: transportaionRef,
+        trigger: faqRef,
       },
     })
   }, [])
@@ -121,13 +123,16 @@ export const Details = () => {
       </div>
 
       <div className="main flex justify-end bg-wedding-green text-center font-dmSans text-white">
-        <div className="details mr-5 w-[600px]">
+        <div className="details mr-5 w-[550px]">
           <Schedule />
           <div ref={rsvp}>
             <RSVP />
           </div>
           <div ref={accomodations}>
             <Accomodations />
+          </div>
+          <div ref={faq}>
+            <FAQ />
           </div>
           <div ref={transportation}>
             <Transportation />
