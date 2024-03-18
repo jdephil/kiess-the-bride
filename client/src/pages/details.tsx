@@ -88,8 +88,8 @@ export const Details = () => {
         <p className="mb-5 mt-5 font-abel text-6xl">Chris & Jen</p>
         <p>Meet us in the mountains</p>
       </div>
-      <div className="moon fixed top-44 z-30 ml-[18rem] ">
-        <img className="w-32" src={moon} />
+      <div className="moon fixed top-44 z-30 ml-[18rem]">
+        <img className="w-16 md:w-32" src={moon} />
         <div className="menu z-20 hidden">
           <MyMenu />
         </div>
@@ -123,7 +123,7 @@ export const Details = () => {
       </div>
 
       <div className="main flex justify-end bg-wedding-green text-center font-dmSans text-white">
-        <div className="details mr-5 w-[550px]">
+        <div className="details mr-5 w-[550px] lg:mr-0 lg:w-[400px] xl:w-[550px]">
           <Schedule />
           <div ref={rsvp}>
             <RSVP />
