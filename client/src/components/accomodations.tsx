@@ -2,7 +2,7 @@ import ExportLink from './locationLink'
 
 export default function Accomodations() {
   return (
-    <div id="accomodations" className="my-3 pt-36 ">
+    <div id="accomodations" className="my-3 pt-24 ">
       <div className="mb-7 text-center font-abel  text-4xl tracking-wide ">Accommodations</div>
       <div className="mt-2 ">
         <div className="mt-5 ">
@@ -20,7 +20,7 @@ export default function Accomodations() {
             Property & Cabin Map
           </a>
           <p className="mt-5">$300/night, 2 night minimum</p>
-          <p>Call front desk and mention our names</p>
+          <p>Call to reserve</p>
           <ExportLink
             link={'https://maps.app.goo.gl/rmJpvFJG6y2FXtvb7'}
             streetAddress={'89 Blue Moon Rising Way'}
@@ -35,8 +35,8 @@ export default function Accomodations() {
           <a className=" underline" href="https://www.suitesatsilvertree.com/">
             Suites at Silver Tree
           </a>
-          <p className="mt-5">$129/night and up</p>
-          <p>Use our code at checkout</p>
+          <p className="mt-5">$164/night and up</p>
+          <p>Call and mention the De Phillips/Kiessling room block</p>
 
           <ExportLink
             link={'https://maps.app.goo.gl/vJ2YwpHc6bXcXGU89'}
