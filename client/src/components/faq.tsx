@@ -9,7 +9,7 @@ export default function FAQ() {
         <p className="m-auto border-b-2 pb-2  text-xl  text-wedding-yellow">What should I wear?</p>
 
         <p className="my-5 ">
-          The event is formal, with a caveat from the bride that looking hot supercedes the dress
+          The wedding is formal, with a caveat from the bride that looking hot supercedes the dress
           code.
         </p>
         <p>Please note:</p>
@@ -35,9 +35,9 @@ export default function FAQ() {
         </p>
 
         <p className="my-5 ">
-          Chris & Jen are obsessed with your children and pets, but they can't bring their cats so
-          now no one can bring their lil guys. While Blue Moon is technically dog-friendly, please
-          leave your dog at home if you are staying on site with us.
+          Chris & Jen are obsessed with your children and pets, but this is a human & adults-only
+          event. While Blue Moon is technically dog-friendly, please leave your dog at home if you
+          are staying on site with us.
         </p>
       </div>
     </div>
