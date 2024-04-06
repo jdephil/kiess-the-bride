@@ -2,7 +2,7 @@ import ExportLink from './locationLink'
 
 export default function Schedule() {
   return (
-    <div id="schedule" className="pt-36 text-center">
+    <div id="schedule" className="pt-10 text-center md:pt-36">
       <div className="text-center font-abel text-4xl  font-bold tracking-wide">Schedule</div>
 
       <div className="mt-10 ">
