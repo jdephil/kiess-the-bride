@@ -7,7 +7,7 @@ export default function FAQ() {
         <p className="m-auto border-b-2 pb-2  text-xl  text-wedding-yellow">What should I wear?</p>
 
         <p className="my-5 ">
-          The wedding is formal, with a caveat from the bride that looking hot supercedes the dress
+          The wedding is formal, with a caveat from the bride that looking hot supersedes the dress
           code.
         </p>
         <p>Please note:</p>
