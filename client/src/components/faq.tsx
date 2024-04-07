@@ -2,7 +2,7 @@ import ExportLink from './locationLink'
 
 export default function FAQ() {
   return (
-    <div id="faq" className="pt-36 text-center">
+    <div id="faq" className="mx-5 pt-36 text-center md:mx-0">
       <div className=" text-center font-abel text-4xl font-bold tracking-wide">FAQ</div>
 
       <div className="mt-14 text-left ">

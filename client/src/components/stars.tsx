@@ -29,11 +29,11 @@ export const Stars = () => {
   }) // <-- scope is for selector text (optional)
   return (
     <div className="bg-wedding-green ">
-      <div className="fixed left-0  ">
-        <img className="star1 ml-36 mt-56 w-6 opacity-50" src={star2} />
-        <img className="star2 ml-56 mt-8 w-6 opacity-90" src={star3} />
-        <img className="star2 ml-12 mt-4 w-6 opacity-60" src={star1} />
-        <img className="star1 ml-72 mt-4 w-6 opacity-30" src={star3} />
+      <div className="left-0 mt-10 md:fixed md:mt-0 ">
+        <img className="star1 ml-36 w-6 opacity-50 md:mt-56" src={star2} />
+        <img className="star2 ml-56 w-6 opacity-90 md:mt-8" src={star3} />
+        <img className="star2 ml-12 w-6 opacity-60 md:mt-4" src={star1} />
+        <img className="star1 ml-72 w-6 opacity-30 md:mt-4" src={star3} />
       </div>
       <div className="fixed left-0 z-20 ">
         <img className="star1 ml-[25rem] mt-64 w-6 opacity-60" src={star1} />
