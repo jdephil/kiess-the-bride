@@ -34,7 +34,7 @@ export default function Schedule() {
           cityStateZip={'Oakland, MD 21550'}
         />
         <p className="my-7  text-2xl font-bold tracking-widest text-wedding-yellow">
-          Rehersal Drinks
+          Rehearsal Drinks
         </p>
         <p>7:00 PM to 9:00 PM</p>
         <p>Deep Creek Fun Zone</p>
