@@ -11,17 +11,19 @@ export const Home = () => {
   }
 
   return (
-    <div className="align-center grid h-screen grid-cols-12 justify-center bg-wedding-yellow">
-      <div className="container col-start-2 col-end-12">
-        <p
+    <div className="align-center grid h-screen  justify-center bg-wedding-yellow">
+      <div className=" mx-auto mt-20 justify-center align-middle">
+        <button
           onClick={() => {
             navigate('/home')
           }}
-          className="absolute left-enter top-36 z-10"
+          className="rounded border border-wedding-green bg-transparent px-4 py-2 font-semibold text-wedding-green hover:border-transparent hover:bg-white hover:text-wedding-purple"
         >
-          Enter
-        </p>
-        <img className="ml-16 w-11/12" src={daytime} />
+          <p className="">Enter</p>
+        </button>
+      </div>
+      <div className=" ">
+        <img className="" src={daytime} />
       </div>
     </div>
   )
