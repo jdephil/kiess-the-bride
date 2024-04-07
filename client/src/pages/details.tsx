@@ -25,7 +25,6 @@ import nightMobile from 'src/assets/images/mobile_night.png'
 gsap.registerPlugin(ScrollTrigger)
 export const Details = () => {
   const container = useRef<HTMLDivElement>(null)
-  const registry = useRef<HTMLDivElement>(null)
   const accomodations = useRef<HTMLDivElement>(null)
   const rsvp = useRef<HTMLDivElement>(null)
   const transportation = useRef<HTMLDivElement>(null)
@@ -142,7 +141,7 @@ export const Details = () => {
           <div ref={transportation}>
             <Transportation />
           </div>
-          <div ref={registry} id="registry" className="reg">
+          <div>
             <Registry />
           </div>
         </div>
