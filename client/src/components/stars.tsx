@@ -35,7 +35,7 @@ export const Stars = () => {
         <img className="star2 ml-12 w-6 opacity-60 md:mt-4" src={star1} />
         <img className="star1 ml-72 w-6 opacity-30 md:mt-4" src={star3} />
       </div>
-      <div className="fixed left-0 z-20 ">
+      <div className="left-0 z-20 hidden md:fixed ">
         <img className="star1 ml-[25rem] mt-64 w-6 opacity-60" src={star1} />
         <img className="star2 ml-[34rem] mt-0 w-6 opacity-90" src={star3} />
         <img className="star1 ml-[29rem] mt-6 w-6 opacity-50" src={star2} />
