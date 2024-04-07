@@ -1,5 +1,3 @@
-import ExportLink from './locationLink'
-
 export default function FAQ() {
   return (
     <div id="faq" className="mx-5 pt-36 text-center md:mx-0">
@@ -15,7 +13,7 @@ export default function FAQ() {
         <p>Please note:</p>
         <p>This is an outdoor event. </p>
         <p>There may be soft or uneven ground.</p>
-        <p>Bringing a coat is recommended.</p>
+        <p>Bringing a coat is recommended, it can get chilly at night.</p>
       </div>
       <div className="mt-14 text-left ">
         <p className="m-auto  border-b-2 pb-2 text-xl  text-wedding-yellow">
@@ -23,11 +21,6 @@ export default function FAQ() {
         </p>
 
         <p className="my-5 ">May 10th, 2024</p>
-      </div>
-      <div className="mt-14 text-left ">
-        <p className="m-auto  border-b-2 pb-2 text-xl  text-wedding-yellow">Can I bring a date?</p>
-
-        <p className="my-5 ">Please see your invitation for your +1</p>
       </div>
       <div className="mt-14 text-left ">
         <p className="m-auto  border-b-2 pb-2 text-xl  text-wedding-yellow">

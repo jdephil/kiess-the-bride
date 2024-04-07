@@ -59,8 +59,8 @@ export default function Schedule() {
         <p className="my-7  text-2xl font-bold tracking-widest text-wedding-yellow">
           Ceremony & Reception
         </p>
-        <p>Welcome Party</p>
-        <p>5:30 PM - 7:30 PM</p>
+        <p>Welcome Party with Bride & Groom</p>
+        <p>5:30 PM</p>
         <p className="mt-5">Twilight Ceremony</p>
         <p>8:00 PM</p>
         <p className="mt-5">Dinner & Reception</p>
