@@ -26,7 +26,7 @@ export default function Schedule() {
         <p className="my-7  text-2xl font-bold tracking-widest text-wedding-yellow">
           Swallow Falls Hike
         </p>
-        <p>1:00 PM to 3:00 PM</p>
+        <p>11:00 AM to 1:00 PM</p>
         <p>Swallow Falls State Park</p>
         <ExportLink
           link={'https://maps.app.goo.gl/oHraTkkTGjxjK2cV7'}
