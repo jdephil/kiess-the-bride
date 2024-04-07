@@ -24,6 +24,16 @@ export default function Schedule() {
       <div className="mt-16">
         <p className="m-auto w-[70%] border-b-2 pb-2   text-xl">Friday June 7, 2024</p>
         <p className="my-7  text-2xl font-bold tracking-widest text-wedding-yellow">
+          Swallow Falls Hike
+        </p>
+        <p>11:00 AM to 1:00 PM</p>
+        <p>Swallow Falls State Park</p>
+        <ExportLink
+          link={'https://maps.app.goo.gl/oHraTkkTGjxjK2cV7'}
+          streetAddress={'2460 Maple Glade Rd'}
+          cityStateZip={'Oakland, MD 21550'}
+        />
+        <p className="my-7  text-2xl font-bold tracking-widest text-wedding-yellow">
           Rehersal Drinks
         </p>
         <p>7:00 PM to 9:00 PM</p>
@@ -37,10 +47,20 @@ export default function Schedule() {
       <div className="mt-16 ">
         <p className="m-auto w-[70%] border-b-2 pb-2   text-xl">Saturday June 8, 2024</p>
         <p className="my-7  text-2xl font-bold tracking-widest text-wedding-yellow">
+          Wedding Day Yoga
+        </p>
+        <p>10:00 AM to 11:00 AM</p>
+        <p>Blue Moon Rising</p>
+        <ExportLink
+          link={'https://maps.app.goo.gl/rmJpvFJG6y2FXtvb7'}
+          streetAddress={'89 Blue Moon Rising Way'}
+          cityStateZip={'McHenry, MD 21541'}
+        />
+        <p className="my-7  text-2xl font-bold tracking-widest text-wedding-yellow">
           Ceremony & Reception
         </p>
-        <p>Welcome Party</p>
-        <p>5:30 PM - 7:30 PM</p>
+        <p>Welcome Party with Bride & Groom</p>
+        <p>5:30 PM</p>
         <p className="mt-5">Twilight Ceremony</p>
         <p>8:00 PM</p>
         <p className="mt-5">Dinner & Reception</p>
