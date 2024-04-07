@@ -19,7 +19,8 @@ export default function Accomodations() {
           >
             Property & Cabin Map
           </a>
-          <p className="mt-5">$300/night, 2 night minimum</p>
+          <p className="mt-5">Available starting Thursday, June 6th</p>
+          <p>$250/night, 2 night minimum</p>
           <p>Call to reserve</p>
           <ExportLink
             link={'https://maps.app.goo.gl/rmJpvFJG6y2FXtvb7'}
@@ -48,9 +49,9 @@ export default function Accomodations() {
           <p className="m-auto w-[70%] border-b-2 pb-2   text-2xl text-wedding-yellow">
             Other Options
           </p>
-          <p className="mt-5">Inn at Deep Creek</p>
-          <p>LakeFront Lodge</p>
-          <p>Wisp Resort</p>
+          <p className="mt-5">LakeFront Lodge</p>
+          <p>The Lodges at Sunset Village</p>
+          <p>Wisp Ski Resort</p>
           <p>Airbnb</p>
           <p>vrbo</p>
         </div>
