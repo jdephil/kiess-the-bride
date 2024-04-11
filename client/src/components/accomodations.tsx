@@ -10,6 +10,10 @@ export default function Accomodations() {
             Blue Moon Rising Cabins
           </p>
           <p className="my-5">Stay onsite with Chris & Jen!</p>
+          <p className="my-5">
+            The best option if you want to spend extra time with us over the weekend and to keep
+            celebrating after the official reception ends
+          </p>
 
           <a
             className=" underline"
@@ -21,7 +25,7 @@ export default function Accomodations() {
           </a>
           <p className="mt-5">Available starting Thursday, June 6th</p>
           <p>$250/night, 2 night minimum</p>
-          <p>Call to reserve</p>
+          <p>Contact Chris or Jen to reserve</p>
           <ExportLink
             link={'https://maps.app.goo.gl/rmJpvFJG6y2FXtvb7'}
             streetAddress={'89 Blue Moon Rising Way'}
