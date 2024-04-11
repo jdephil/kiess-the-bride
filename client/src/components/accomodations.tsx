@@ -42,6 +42,7 @@ export default function Accomodations() {
           </a>
           <p className="mt-5">$164/night and up</p>
           <p>Call and mention the De Phillips/Kiessling room block</p>
+          <p>Reserve by April 30th for the room block discount</p>
 
           <ExportLink
             link={'https://maps.app.goo.gl/vJ2YwpHc6bXcXGU89'}

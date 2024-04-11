@@ -33,6 +33,20 @@ export default function FAQ() {
           are staying on site with us.
         </p>
       </div>
+      <div className="mt-14 text-left ">
+        <p className="m-auto  border-b-2 pb-2 text-xl  text-wedding-yellow">
+          Is there parking at the venue?
+        </p>
+
+        <p className="my-5 ">
+          There is limited parking at the venue so if you are not staying onsite, it is strongly
+          encouraged to take the shuttle.
+        </p>
+        <p>
+          Deep Creek uber/taxi service is "very limited to non-existent" according to the venue so
+          please keep that in mind as well.
+        </p>
+      </div>
     </div>
   )
 }
