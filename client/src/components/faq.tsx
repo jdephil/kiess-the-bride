@@ -28,9 +28,14 @@ export default function FAQ() {
         </p>
 
         <p className="my-5 ">
-          Chris & Jen are obsessed with your children and pets, but this is a human & adults-only
-          event. While Blue Moon is technically dog-friendly, please leave your dog at home if you
-          are staying on site with us.
+          The wedding itself is adults-only, but feel free to bring your kids to other events
+          throughout the weekend. Just note there will be no babysitting services provided. If you
+          need one, let Jen know so she can connect you with other parent-guests in the same
+          situation.
+        </p>
+        <p className="my-5 ">
+          Jen & Chris are obsessed with your pets, and while Blue Moon is technically dog-friendly,
+          we kindly ask that you leave your dog at home if you are staying on site with us.
         </p>
       </div>
       <div className="mt-14 text-left ">
