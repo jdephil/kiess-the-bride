@@ -34,7 +34,7 @@ export default function FAQ() {
           situation.
         </p>
         <p className="my-5 ">
-          Jen & Chris are obsessed with your pets, but while Blue Moon is technically dog-friendly,
+          Jen & Chris are obsessed with your pets, and while Blue Moon is technically dog-friendly,
           we kindly ask that you leave your dog at home if you are staying on site with us.
         </p>
       </div>
