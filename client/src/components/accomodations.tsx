@@ -10,7 +10,7 @@ export default function Accomodations() {
             Blue Moon Rising Cabins
           </p>
           <p className="my-5">Stay onsite with Chris & Jen!</p>
-          <p className="my-5 font-bold text-wedding-yellow">Only 1 cabin left</p>
+          <p className="my-5 font-bold text-wedding-yellow">Sold out</p>
           <p className="my-5">
             The best option if you want to spend extra time with us over the weekend and to keep
             celebrating after the official reception ends
