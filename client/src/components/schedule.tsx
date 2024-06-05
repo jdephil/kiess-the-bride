@@ -49,7 +49,7 @@ export default function Schedule() {
         <p className="my-7  text-2xl font-bold tracking-widest text-wedding-yellow">
           Wedding Day Yoga
         </p>
-        <p>10:00 AM to 11:00 AM</p>
+        <p>9:00 AM to 10:00 AM</p>
         <p>Blue Moon Rising</p>
         <ExportLink
           link={'https://maps.app.goo.gl/rmJpvFJG6y2FXtvb7'}
@@ -62,9 +62,9 @@ export default function Schedule() {
         <p>Welcome Party with Bride & Groom</p>
         <p>5:30 PM</p>
         <p className="mt-5">Twilight Ceremony</p>
-        <p>8:00 PM</p>
+        <p>7:45 PM</p>
         <p className="mt-5">Dinner & Reception</p>
-        <p>8:30 PM</p>
+        <p>8:15 PM</p>
         <p className="mt-5">Blue Moon Rising</p>
         <ExportLink
           link={'https://maps.app.goo.gl/rmJpvFJG6y2FXtvb7'}
